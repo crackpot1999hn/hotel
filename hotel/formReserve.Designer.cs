@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label paymentsLabel;
-            System.Windows.Forms.Label totalLabel;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label madrakLabel;
             System.Windows.Forms.Label codeLabel;
             System.Windows.Forms.Label code_customerLabel;
             System.Windows.Forms.Label code_roomLabel;
             System.Windows.Forms.Label label4;
+            System.Windows.Forms.Label paymentsLabel;
+            System.Windows.Forms.Label totalLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formReserve));
             this.tblroomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new hotel.hotelDataSet();
@@ -71,7 +71,7 @@
             this.tbl_roomTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_roomTableAdapter();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datestartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateendDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coderoomDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +80,10 @@
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.takhfifDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.خالیکردناتاقToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ویرایشاطلاعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.حذفاطلاعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblPrice = new System.Windows.Forms.Label();
             this.RoomComboBox = new System.Windows.Forms.ComboBox();
@@ -91,14 +95,14 @@
             this.madrakTextBox = new System.Windows.Forms.TextBox();
             this.faDatePicker1 = new FarsiLibrary.Win.Controls.FADatePicker();
             this.codeTextBox = new System.Windows.Forms.TextBox();
-            paymentsLabel = new System.Windows.Forms.Label();
-            totalLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             madrakLabel = new System.Windows.Forms.Label();
             codeLabel = new System.Windows.Forms.Label();
             code_customerLabel = new System.Windows.Forms.Label();
             code_roomLabel = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            paymentsLabel = new System.Windows.Forms.Label();
+            totalLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -109,34 +113,15 @@
             this.tbl_reserveBindingNavigator.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // paymentsLabel
-            // 
-            paymentsLabel.AutoSize = true;
-            paymentsLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            paymentsLabel.Location = new System.Drawing.Point(501, 101);
-            paymentsLabel.Name = "paymentsLabel";
-            paymentsLabel.Size = new System.Drawing.Size(116, 22);
-            paymentsLabel.TabIndex = 24;
-            paymentsLabel.Text = "باقیمانده حساب :";
-            // 
-            // totalLabel
-            // 
-            totalLabel.AutoSize = true;
-            totalLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            totalLabel.Location = new System.Drawing.Point(816, 101);
-            totalLabel.Name = "totalLabel";
-            totalLabel.Size = new System.Drawing.Size(48, 22);
-            totalLabel.TabIndex = 20;
-            totalLabel.Text = "مبلغ :";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            label3.Location = new System.Drawing.Point(99, 12);
+            label3.Location = new System.Drawing.Point(99, 31);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(54, 22);
             label3.TabIndex = 47;
@@ -146,7 +131,7 @@
             // 
             madrakLabel.AutoSize = true;
             madrakLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            madrakLabel.Location = new System.Drawing.Point(327, 62);
+            madrakLabel.Location = new System.Drawing.Point(327, 81);
             madrakLabel.Name = "madrakLabel";
             madrakLabel.Size = new System.Drawing.Size(59, 22);
             madrakLabel.TabIndex = 39;
@@ -156,7 +141,7 @@
             // 
             codeLabel.AutoSize = true;
             codeLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            codeLabel.Location = new System.Drawing.Point(845, 8);
+            codeLabel.Location = new System.Drawing.Point(879, 27);
             codeLabel.Name = "codeLabel";
             codeLabel.Size = new System.Drawing.Size(36, 22);
             codeLabel.TabIndex = 35;
@@ -166,7 +151,7 @@
             // 
             code_customerLabel.AutoSize = true;
             code_customerLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            code_customerLabel.Location = new System.Drawing.Point(832, 55);
+            code_customerLabel.Location = new System.Drawing.Point(866, 74);
             code_customerLabel.Name = "code_customerLabel";
             code_customerLabel.Size = new System.Drawing.Size(67, 22);
             code_customerLabel.TabIndex = 38;
@@ -176,7 +161,7 @@
             // 
             code_roomLabel.AutoSize = true;
             code_roomLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            code_roomLabel.Location = new System.Drawing.Point(590, 63);
+            code_roomLabel.Location = new System.Drawing.Point(590, 82);
             code_roomLabel.Name = "code_roomLabel";
             code_roomLabel.Size = new System.Drawing.Size(52, 22);
             code_roomLabel.TabIndex = 37;
@@ -186,11 +171,31 @@
             // 
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            label4.Location = new System.Drawing.Point(501, 29);
+            label4.Location = new System.Drawing.Point(501, 39);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(113, 22);
             label4.TabIndex = 36;
             label4.Text = "جمع کل حساب :";
+            // 
+            // paymentsLabel
+            // 
+            paymentsLabel.AutoSize = true;
+            paymentsLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            paymentsLabel.Location = new System.Drawing.Point(501, 111);
+            paymentsLabel.Name = "paymentsLabel";
+            paymentsLabel.Size = new System.Drawing.Size(116, 22);
+            paymentsLabel.TabIndex = 24;
+            paymentsLabel.Text = "باقیمانده حساب :";
+            // 
+            // totalLabel
+            // 
+            totalLabel.AutoSize = true;
+            totalLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
+            totalLabel.Location = new System.Drawing.Point(822, 108);
+            totalLabel.Name = "totalLabel";
+            totalLabel.Size = new System.Drawing.Size(48, 22);
+            totalLabel.TabIndex = 20;
+            totalLabel.Text = "مبلغ :";
             // 
             // tblroomBindingSource
             // 
@@ -209,11 +214,12 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 275);
+            this.panel1.Size = new System.Drawing.Size(946, 275);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.MediumPurple;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.codeRezerveTextBox);
             this.panel2.Controls.Add(this.label5);
@@ -226,15 +232,16 @@
             this.panel2.Controls.Add(paymentsLabel);
             this.panel2.Controls.Add(totalLabel);
             this.panel2.Controls.Add(this.paymentTextBox);
-            this.panel2.Location = new System.Drawing.Point(3, 105);
+            this.panel2.Location = new System.Drawing.Point(3, 118);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(878, 165);
-            this.panel2.TabIndex = 26;
+            this.panel2.Size = new System.Drawing.Size(942, 155);
+            this.panel2.TabIndex = 27;
             // 
             // codeRezerveTextBox
             // 
             this.codeRezerveTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_reserveBindingSource, "code", true));
-            this.codeRezerveTextBox.Location = new System.Drawing.Point(642, 25);
+            this.codeRezerveTextBox.Enabled = false;
+            this.codeRezerveTextBox.Location = new System.Drawing.Point(642, 35);
             this.codeRezerveTextBox.Name = "codeRezerveTextBox";
             this.codeRezerveTextBox.Size = new System.Drawing.Size(139, 26);
             this.codeRezerveTextBox.TabIndex = 39;
@@ -248,7 +255,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(793, 25);
+            this.label5.Location = new System.Drawing.Point(793, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 22);
             this.label5.TabIndex = 38;
@@ -259,7 +266,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_reserveBindingSource, "total", true));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblTotal.Location = new System.Drawing.Point(412, 29);
+            this.lblTotal.Location = new System.Drawing.Point(412, 39);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(0, 19);
             this.lblTotal.TabIndex = 37;
@@ -267,19 +274,19 @@
             // calBtn
             // 
             this.calBtn.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.calBtn.Location = new System.Drawing.Point(195, 22);
+            this.calBtn.Location = new System.Drawing.Point(195, 32);
             this.calBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.calBtn.Name = "calBtn";
             this.calBtn.Size = new System.Drawing.Size(98, 29);
             this.calBtn.TabIndex = 35;
             this.calBtn.Text = "محاسبه";
             this.calBtn.UseVisualStyleBackColor = true;
-            this.calBtn.Click += new System.EventHandler(this.calBtn_Click_1);
+            this.calBtn.Click += new System.EventHandler(this.calBtn_Click);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(210, 104);
+            this.checkBox1.Location = new System.Drawing.Point(210, 114);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(83, 23);
             this.checkBox1.TabIndex = 27;
@@ -288,17 +295,17 @@
             // 
             // applyBtn
             // 
-            this.applyBtn.Location = new System.Drawing.Point(52, 101);
+            this.applyBtn.Location = new System.Drawing.Point(52, 111);
             this.applyBtn.Name = "applyBtn";
             this.applyBtn.Size = new System.Drawing.Size(132, 27);
             this.applyBtn.TabIndex = 26;
             this.applyBtn.Text = "اعمال";
             this.applyBtn.UseVisualStyleBackColor = true;
-            this.applyBtn.Click += new System.EventHandler(this.applyBtn_Click);
+            this.applyBtn.Click += new System.EventHandler(this.applyBtn_Click_1);
             // 
             // baghiMandehTextBox
             // 
-            this.baghiMandehTextBox.Location = new System.Drawing.Point(337, 101);
+            this.baghiMandehTextBox.Location = new System.Drawing.Point(337, 111);
             this.baghiMandehTextBox.Name = "baghiMandehTextBox";
             this.baghiMandehTextBox.Size = new System.Drawing.Size(158, 26);
             this.baghiMandehTextBox.TabIndex = 25;
@@ -306,7 +313,7 @@
             // 
             // paymentTextBox
             // 
-            this.paymentTextBox.Location = new System.Drawing.Point(659, 97);
+            this.paymentTextBox.Location = new System.Drawing.Point(659, 107);
             this.paymentTextBox.Name = "paymentTextBox";
             this.paymentTextBox.Size = new System.Drawing.Size(151, 26);
             this.paymentTextBox.TabIndex = 21;
@@ -466,12 +473,12 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.BackColor = System.Drawing.Color.MediumPurple;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Location = new System.Drawing.Point(12, 329);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(882, 290);
+            this.panel3.Size = new System.Drawing.Size(946, 290);
             this.panel3.TabIndex = 3;
             // 
             // dataGridView1
@@ -479,7 +486,7 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codeDataGridViewTextBoxColumn,
+            this.code,
             this.datestartDataGridViewTextBoxColumn,
             this.dateendDataGridViewTextBoxColumn,
             this.coderoomDataGridViewTextBoxColumn,
@@ -488,18 +495,21 @@
             this.totalDataGridViewTextBoxColumn,
             this.takhfifDataGridViewTextBoxColumn,
             this.paymentsDataGridViewTextBoxColumn});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.DataSource = this.tbl_reserveBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 23);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 37);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(856, 244);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(914, 244);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
             // 
-            // codeDataGridViewTextBoxColumn
+            // code
             // 
-            this.codeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "کد";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "کد";
+            this.code.Name = "code";
             // 
             // datestartDataGridViewTextBoxColumn
             // 
@@ -558,9 +568,39 @@
             this.paymentsDataGridViewTextBoxColumn.HeaderText = "پرداختی";
             this.paymentsDataGridViewTextBoxColumn.Name = "paymentsDataGridViewTextBoxColumn";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.خالیکردناتاقToolStripMenuItem,
+            this.ویرایشاطلاعاتToolStripMenuItem,
+            this.حذفاطلاعاتToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 70);
+            // 
+            // خالیکردناتاقToolStripMenuItem
+            // 
+            this.خالیکردناتاقToolStripMenuItem.Name = "خالیکردناتاقToolStripMenuItem";
+            this.خالیکردناتاقToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.خالیکردناتاقToolStripMenuItem.Text = "خالی کردن اتاق";
+            this.خالیکردناتاقToolStripMenuItem.Click += new System.EventHandler(this.خالیکردناتاقToolStripMenuItem_Click);
+            // 
+            // ویرایشاطلاعاتToolStripMenuItem
+            // 
+            this.ویرایشاطلاعاتToolStripMenuItem.Name = "ویرایشاطلاعاتToolStripMenuItem";
+            this.ویرایشاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.ویرایشاطلاعاتToolStripMenuItem.Text = "ویرایش اطلاعات";
+            this.ویرایشاطلاعاتToolStripMenuItem.Click += new System.EventHandler(this.ویرایشاطلاعاتToolStripMenuItem_Click);
+            // 
+            // حذفاطلاعاتToolStripMenuItem
+            // 
+            this.حذفاطلاعاتToolStripMenuItem.Name = "حذفاطلاعاتToolStripMenuItem";
+            this.حذفاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.حذفاطلاعاتToolStripMenuItem.Text = "حذف اطلاعات";
+            this.حذفاطلاعاتToolStripMenuItem.Click += new System.EventHandler(this.حذفاطلاعاتToolStripMenuItem_Click);
+            // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel4.BackColor = System.Drawing.Color.MediumPurple;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.lblPrice);
             this.panel4.Controls.Add(label3);
@@ -579,7 +619,7 @@
             this.panel4.Controls.Add(code_roomLabel);
             this.panel4.Location = new System.Drawing.Point(12, 30);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(915, 100);
+            this.panel4.Size = new System.Drawing.Size(946, 134);
             this.panel4.TabIndex = 35;
             // 
             // lblPrice
@@ -587,7 +627,7 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblroomBindingSource, "price", true));
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblPrice.Location = new System.Drawing.Point(23, 15);
+            this.lblPrice.Location = new System.Drawing.Point(31, 35);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(0, 19);
             this.lblPrice.TabIndex = 48;
@@ -597,17 +637,17 @@
             this.RoomComboBox.DataSource = this.tblroomBindingSource;
             this.RoomComboBox.DisplayMember = "code";
             this.RoomComboBox.FormattingEnabled = true;
-            this.RoomComboBox.Location = new System.Drawing.Point(428, 63);
+            this.RoomComboBox.Location = new System.Drawing.Point(428, 82);
             this.RoomComboBox.Name = "RoomComboBox";
             this.RoomComboBox.Size = new System.Drawing.Size(142, 27);
             this.RoomComboBox.TabIndex = 46;
             // 
             // CustomerComboBox
             // 
-            this.CustomerComboBox.DataSource = this.tblcustomerBindingSource;
-            this.CustomerComboBox.DisplayMember = "name";
+            this.CustomerComboBox.DataSource = this.tblroomBindingSource;
+            this.CustomerComboBox.DisplayMember = "code";
             this.CustomerComboBox.FormattingEnabled = true;
-            this.CustomerComboBox.Location = new System.Drawing.Point(673, 56);
+            this.CustomerComboBox.Location = new System.Drawing.Point(707, 75);
             this.CustomerComboBox.Name = "CustomerComboBox";
             this.CustomerComboBox.Size = new System.Drawing.Size(141, 27);
             this.CustomerComboBox.TabIndex = 45;
@@ -616,17 +656,18 @@
             // saveBtn
             // 
             this.saveBtn.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.saveBtn.Location = new System.Drawing.Point(15, 64);
+            this.saveBtn.Location = new System.Drawing.Point(15, 83);
             this.saveBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(98, 29);
             this.saveBtn.TabIndex = 44;
             this.saveBtn.Text = "ثبت";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // faDatePicker2
             // 
-            this.faDatePicker2.Location = new System.Drawing.Point(172, 12);
+            this.faDatePicker2.Location = new System.Drawing.Point(172, 31);
             this.faDatePicker2.Name = "faDatePicker2";
             this.faDatePicker2.Size = new System.Drawing.Size(142, 26);
             this.faDatePicker2.TabIndex = 43;
@@ -636,7 +677,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(341, 12);
+            this.label2.Location = new System.Drawing.Point(327, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 22);
             this.label2.TabIndex = 42;
@@ -646,7 +687,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(600, 10);
+            this.label1.Location = new System.Drawing.Point(590, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 22);
             this.label1.TabIndex = 41;
@@ -655,14 +696,14 @@
             // madrakTextBox
             // 
             this.madrakTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_reserveBindingSource, "madrak", true));
-            this.madrakTextBox.Location = new System.Drawing.Point(157, 64);
+            this.madrakTextBox.Location = new System.Drawing.Point(172, 81);
             this.madrakTextBox.Name = "madrakTextBox";
             this.madrakTextBox.Size = new System.Drawing.Size(142, 26);
             this.madrakTextBox.TabIndex = 40;
             // 
             // faDatePicker1
             // 
-            this.faDatePicker1.Location = new System.Drawing.Point(428, 12);
+            this.faDatePicker1.Location = new System.Drawing.Point(428, 31);
             this.faDatePicker1.Name = "faDatePicker1";
             this.faDatePicker1.Size = new System.Drawing.Size(142, 26);
             this.faDatePicker1.TabIndex = 34;
@@ -671,7 +712,7 @@
             // codeTextBox
             // 
             this.codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_reserveBindingSource, "code", true));
-            this.codeTextBox.Location = new System.Drawing.Point(702, 7);
+            this.codeTextBox.Location = new System.Drawing.Point(707, 29);
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.Size = new System.Drawing.Size(142, 26);
             this.codeTextBox.TabIndex = 36;
@@ -694,6 +735,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فرم رزرو اتاق";
+            this.Activated += new System.EventHandler(this.formReserve_Activated);
             this.Load += new System.EventHandler(this.formReserve_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
@@ -707,6 +749,7 @@
             this.tbl_reserveBindingNavigator.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -738,26 +781,8 @@
         private System.Windows.Forms.BindingSource tblcustomerBindingSource;
         private hotelDataSetTableAdapters.tbl_roomTableAdapter tbl_roomTableAdapter;
         private System.Windows.Forms.BindingSource tblroomBindingSource;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button applyBtn;
-        private System.Windows.Forms.TextBox baghiMandehTextBox;
-        private System.Windows.Forms.TextBox paymentTextBox;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datestartDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateendDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coderoomDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codecustomerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn madrakDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn takhfifDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paymentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox codeRezerveTextBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Button calBtn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ComboBox RoomComboBox;
@@ -769,5 +794,27 @@
         private System.Windows.Forms.TextBox madrakTextBox;
         private FarsiLibrary.Win.Controls.FADatePicker faDatePicker1;
         private System.Windows.Forms.TextBox codeTextBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem خالیکردناتاقToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ویرایشاطلاعاتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem حذفاطلاعاتToolStripMenuItem;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox codeRezerveTextBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button calBtn;
+        private System.Windows.Forms.Button applyBtn;
+        private System.Windows.Forms.TextBox baghiMandehTextBox;
+        private System.Windows.Forms.TextBox paymentTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datestartDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateendDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coderoomDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codecustomerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn madrakDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn takhfifDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

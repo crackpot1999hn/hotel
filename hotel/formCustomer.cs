@@ -52,7 +52,7 @@ namespace hotel
                 this.tbl_customerTableAdapter.Fill(this.hotelDataSet.tbl_customer);
 
             else
-                tbl_customerTableAdapter.FillCodemeli(hotelDataSet.tbl_customer, searchTextBox.Text);  
+                tbl_customerTableAdapter.FillByCodemeli(hotelDataSet.tbl_customer, searchTextBox.Text);  
         }
 
         private void ویرایشاطلاعاتToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,6 +83,12 @@ namespace hotel
         {
             this.tbl_customerTableAdapter.Fill(this.hotelDataSet.tbl_customer);
 
+        }
+
+        private void tbl_customerDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Close();
+            new formReserve(tbl_customerDataGridView.CurrentRow.Cells["code"].Value.ToString());
         }
 
       

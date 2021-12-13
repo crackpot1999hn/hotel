@@ -17,6 +17,7 @@ namespace hotel
             InitializeComponent();
             textCode.Text = code;
         }
+
         private void tbl_customerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -26,7 +27,7 @@ namespace hotel
         }
         private void formUpdateCustomer_Load(object sender, EventArgs e)
         {
-            this.tbl_customerTableAdapter.FillBycode(this.hotelDataSet.tbl_customer,textCode.Text);
+            this.tbl_customerTableAdapter.FillByCode(this.hotelDataSet.tbl_customer,textCode.Text);
         }
 
         private void editBtn_Click(object sender, EventArgs e)

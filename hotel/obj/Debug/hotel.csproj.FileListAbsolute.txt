@@ -18,3 +18,10 @@ E:\Software\C#\hotel\hotel\hotel\bin\Debug\FarsiLibrary.Win.xml
 E:\Software\C#\hotel\hotel\hotel\bin\Debug\FarsiLibrary.Utils.xml
 E:\Software\C#\hotel\hotel\hotel\bin\Debug\FarsiLibrary.Resources.xml
 E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formReserve.resources
+E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formUpdateReserve.resources
+E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formPersonel.resources
+E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formHazineh.resources
+E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formReport.resources
+E:\Software\C#\hotel\hotel\hotel\obj\Debug\RdlCompile.cache
+E:\Software\C#\hotel\hotel\hotel\obj\Debug\RdlCompile.compiled
+E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formLogin.resources

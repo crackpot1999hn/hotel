@@ -79,6 +79,7 @@
             this.searchCodeTextBox = new System.Windows.Forms.TextBox();
             this.tbl_roomTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_roomTableAdapter();
             this.tableAdapterManager = new hotel.hotelDataSetTableAdapters.TableAdapterManager();
+            this.اتاقخالینیستToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             codeLabel = new System.Windows.Forms.Label();
             areaLabel = new System.Windows.Forms.Label();
             priceLabel = new System.Windows.Forms.Label();
@@ -157,7 +158,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.MediumPurple;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.saveBtn);
             this.panel1.Controls.Add(number_flatLabel1);
@@ -440,10 +441,11 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ویرایشاطلاعاتToolStripMenuItem,
-            this.حذفاطلاعاتToolStripMenuItem});
+            this.حذفاطلاعاتToolStripMenuItem,
+            this.اتاقخالینیستToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(148, 70);
             // 
             // ویرایشاطلاعاتToolStripMenuItem
             // 
@@ -461,7 +463,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.MediumPurple;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.searchFlatTextBox);
             this.panel2.Controls.Add(this.label2);
@@ -542,6 +544,13 @@
             this.tableAdapterManager.tbl_roomTableAdapter = this.tbl_roomTableAdapter;
             this.tableAdapterManager.UpdateOrder = hotel.hotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // اتاقخالینیستToolStripMenuItem
+            // 
+            this.اتاقخالینیستToolStripMenuItem.Name = "اتاقخالینیستToolStripMenuItem";
+            this.اتاقخالینیستToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.اتاقخالینیستToolStripMenuItem.Text = "اتاق خالی نیست";
+            this.اتاقخالینیستToolStripMenuItem.Click += new System.EventHandler(this.اتاقخالینیستToolStripMenuItem_Click);
+            // 
             // formRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -620,5 +629,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ویرایشاطلاعاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حذفاطلاعاتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem اتاقخالینیستToolStripMenuItem;
     }
 }

@@ -36,18 +36,18 @@
             System.Windows.Forms.Label descLabel;
             System.Windows.Forms.Label number_flatLabel1;
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.number_flatTextBox = new System.Windows.Forms.TextBox();
+            this.tblroomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotelDataSet = new hotel.hotelDataSet();
             this.descTextBox = new System.Windows.Forms.TextBox();
             this.emkanatTextBox = new System.Windows.Forms.TextBox();
             this.priceTextBox = new System.Windows.Forms.TextBox();
             this.areaTextBox = new System.Windows.Forms.TextBox();
             this.codeTextBox = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.hotelDataSet = new hotel.hotelDataSet();
             this.tbl_roomTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_roomTableAdapter();
-            this.tblroomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             codeLabel = new System.Windows.Forms.Label();
             areaLabel = new System.Windows.Forms.Label();
             priceLabel = new System.Windows.Forms.Label();
@@ -55,8 +55,8 @@
             descLabel = new System.Windows.Forms.Label();
             number_flatLabel1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // codeLabel
@@ -121,7 +121,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.SkyBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.button1);
@@ -142,6 +142,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 282);
             this.panel1.TabIndex = 1;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(458, 205);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkBox1.Size = new System.Drawing.Size(108, 21);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "اتاق خالی است";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -171,6 +182,16 @@
             this.number_flatTextBox.Name = "number_flatTextBox";
             this.number_flatTextBox.Size = new System.Drawing.Size(114, 23);
             this.number_flatTextBox.TabIndex = 14;
+            // 
+            // tblroomBindingSource
+            // 
+            this.tblroomBindingSource.DataMember = "tbl_room";
+            this.tblroomBindingSource.DataSource = this.hotelDataSet;
+            // 
+            // hotelDataSet
+            // 
+            this.hotelDataSet.DataSetName = "hotelDataSet";
+            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // descTextBox
             // 
@@ -212,30 +233,9 @@
             this.codeTextBox.Size = new System.Drawing.Size(114, 23);
             this.codeTextBox.TabIndex = 1;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(458, 205);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBox1.Size = new System.Drawing.Size(108, 21);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "اتاق خالی است";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // hotelDataSet
-            // 
-            this.hotelDataSet.DataSetName = "hotelDataSet";
-            this.hotelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tbl_roomTableAdapter
             // 
             this.tbl_roomTableAdapter.ClearBeforeFill = true;
-            // 
-            // tblroomBindingSource
-            // 
-            this.tblroomBindingSource.DataMember = "tbl_room";
-            this.tblroomBindingSource.DataSource = this.hotelDataSet;
             // 
             // formUpdateRoom
             // 
@@ -255,8 +255,8 @@
             this.Load += new System.EventHandler(this.formUpdateRoom_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

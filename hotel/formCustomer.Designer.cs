@@ -320,7 +320,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.MediumPurple;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(mobileLabel);
             this.panel1.Controls.Add(this.mobileTextBox);
@@ -390,7 +390,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.MediumPurple;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.searchTextBox);
             this.panel2.Controls.Add(this.label1);
@@ -437,6 +437,7 @@
             this.tbl_customerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tbl_customerDataGridView.Size = new System.Drawing.Size(834, 228);
             this.tbl_customerDataGridView.TabIndex = 24;
+            this.tbl_customerDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tbl_customerDataGridView_CellDoubleClick);
             this.tbl_customerDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.tbl_customerDataGridView_UserDeletingRow);
             // 
             // code
@@ -488,19 +489,19 @@
             this.حذفاطلاعاتToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(145, 48);
             // 
             // ویرایشاطلاعاتToolStripMenuItem
             // 
             this.ویرایشاطلاعاتToolStripMenuItem.Name = "ویرایشاطلاعاتToolStripMenuItem";
-            this.ویرایشاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ویرایشاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.ویرایشاطلاعاتToolStripMenuItem.Text = "ویرایش اطلاعات";
             this.ویرایشاطلاعاتToolStripMenuItem.Click += new System.EventHandler(this.ویرایشاطلاعاتToolStripMenuItem_Click);
             // 
             // حذفاطلاعاتToolStripMenuItem
             // 
             this.حذفاطلاعاتToolStripMenuItem.Name = "حذفاطلاعاتToolStripMenuItem";
-            this.حذفاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.حذفاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.حذفاطلاعاتToolStripMenuItem.Text = "حذف اطلاعات";
             this.حذفاطلاعاتToolStripMenuItem.Click += new System.EventHandler(this.حذفاطلاعاتToolStripMenuItem_Click);
             // 

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUpdateCustomer));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.textMobile = new System.Windows.Forms.TextBox();
             this.tbl_customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -61,7 +62,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tbl_customerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
@@ -71,7 +71,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.editBtn);
@@ -92,6 +92,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(550, 303);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(452, 252);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(67, 31);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "بستن";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // editBtn
             // 
@@ -376,16 +386,6 @@
             this.tbl_customerBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 24);
             this.tbl_customerBindingNavigatorSaveItem.Text = "Save Data";
             this.tbl_customerBindingNavigatorSaveItem.Click += new System.EventHandler(this.tbl_customerBindingNavigatorSaveItem_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(452, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 31);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "بستن";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // formUpdateCustomer
             // 

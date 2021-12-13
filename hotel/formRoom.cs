@@ -109,6 +109,11 @@ namespace hotel
 
         }
 
+        private void اتاقخالینیستToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tbl_roomTableAdapter.UpdateFlag("1", tbl_roomDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+        }
+
       
     }
 }

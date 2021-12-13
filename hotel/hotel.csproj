@@ -35,9 +35,12 @@
     <Reference Include="FarsiLibrary.Win">
       <HintPath>C:\Users\Masoud\Downloads\Compressed\FarsiLibrary.Win.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +56,30 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formHazineh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formHazineh.Designer.cs">
+      <DependentUpon>formHazineh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPersonel.Designer.cs">
+      <DependentUpon>formPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formReport.Designer.cs">
+      <DependentUpon>formReport.cs</DependentUpon>
     </Compile>
     <Compile Include="formReserve.cs">
       <SubType>Form</SubType>
@@ -78,15 +105,17 @@
     <Compile Include="formUpdateCustomer.designer.cs">
       <DependentUpon>formUpdateCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="formUpdateReserve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formUpdateReserve.Designer.cs">
+      <DependentUpon>formUpdateReserve.cs</DependentUpon>
+    </Compile>
     <Compile Include="formUpdateRoom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formUpdateRoom.Designer.cs">
       <DependentUpon>formUpdateRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="hotelDataSet.cs">
-      <DependentUpon>hotelDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="hotelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,6 +126,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formHazineh.resx">
+      <DependentUpon>formHazineh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPersonel.resx">
+      <DependentUpon>formPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formReport.resx">
+      <DependentUpon>formReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formReserve.resx">
       <DependentUpon>formReserve.cs</DependentUpon>
@@ -110,6 +151,9 @@
     <EmbeddedResource Include="formUpdateCustomer.resx">
       <DependentUpon>formUpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formUpdateReserve.resx">
+      <DependentUpon>formUpdateReserve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formUpdateRoom.resx">
       <DependentUpon>formUpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +166,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reportRoomFree.rdlc" />
     <None Include="hotelDataSet.xsc">
       <DependentUpon>hotelDataSet.xsd</DependentUpon>
     </None>
