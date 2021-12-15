@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblPermission = new System.Windows.Forms.Label();
             this.usernameCombo = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tblpersonelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.SuspendLayout();
@@ -144,20 +145,33 @@
             // 
             // usernameCombo
             // 
-            this.usernameCombo.DataSource = this.tblpersonelBindingSource;
-            this.usernameCombo.DisplayMember = "user_name";
             this.usernameCombo.FormattingEnabled = true;
             this.usernameCombo.Location = new System.Drawing.Point(138, 82);
             this.usernameCombo.Name = "usernameCombo";
             this.usernameCombo.Size = new System.Drawing.Size(148, 26);
             this.usernameCombo.TabIndex = 10;
+            this.usernameCombo.ValueMember = "user_name";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(15, 155);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 22);
+            this.checkBox1.TabIndex = 11;
+            this.checkBox1.Text = "نمایش رمز";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.Thistle;
             this.ClientSize = new System.Drawing.Size(407, 330);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.usernameCombo);
             this.Controls.Add(this.lblPermission);
             this.Controls.Add(this.label4);
@@ -168,7 +182,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formLogin";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -195,5 +209,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblPermission;
         private System.Windows.Forms.ComboBox usernameCombo;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

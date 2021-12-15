@@ -6445,8 +6445,8 @@ SELECT code, date_start, date_end, code_room, code_customer, madrak, total, takh
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT code, date_start, date_end, code_room, code_customer, madrak, total, takhf" +
-                "if, payments FROM dbo.tbl_reserve where code=@code";
+            this._commandCollection[2].CommandText = "SELECT code, date_start, date_end, code_room, code_customer, madrak, total, payme" +
+                "nts FROM dbo.tbl_reserve where code=@code";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
@@ -6468,8 +6468,8 @@ SELECT code, date_start, date_end, code_room, code_customer, madrak, total, takh
             this._commandCollection[6].Connection = this.Connection;
             this._commandCollection[6].CommandText = @"INSERT INTO tbl_reserve
                          (code, date_start, date_end, code_room, code_customer, madrak, total, takhfif, payments)
-VALUES        (@code,@date_start,@date_end,@code_room,@code_customer,@madrak,@total,@takhfif,@payments);  
-SELECT code, date_start, date_end, code_room, code_customer, madrak, total, takhfif, payments FROM tbl_reserve WHERE (code = @code)";
+VALUES        (@code,@date_start,@date_end,@code_room,@code_customer,@madrak,@total,@payments,);  
+SELECT code, date_start, date_end, code_room, code_customer, madrak, total, payments FROM tbl_reserve WHERE (code = @code)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_start", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "date_start", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6478,8 +6478,7 @@ SELECT code, date_start, date_end, code_room, code_customer, madrak, total, takh
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code_customer", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "code_customer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@madrak", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "madrak", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@takhfif", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "takhfif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@payments", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "payments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@payments", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "takhfif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "UPDATE       tbl_reserve\r\nSET                total= @total, payments =payments+ @" +
@@ -6492,7 +6491,7 @@ SELECT code, date_start, date_end, code_room, code_customer, madrak, total, takh
             this._commandCollection[8].Connection = this.Connection;
             this._commandCollection[8].CommandText = @"UPDATE       tbl_reserve
 SET                date_start = @date_start, date_end = @date_end, code_room = @code_room, code_customer = @code_customer, madrak = @madrak, total = @total, 
-                         takhfif = @takhfif, payments = @payments
+                         payments = @payments
 WHERE        (code = @code)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date_start", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "date_start", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6501,7 +6500,6 @@ WHERE        (code = @code)";
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code_customer", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "code_customer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@madrak", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "madrak", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@total", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "total", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@takhfif", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "takhfif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@payments", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "payments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@code", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -7078,7 +7076,7 @@ WHERE        (code = @code)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string code, string date_start, string date_end, string code_room, string code_customer, string madrak, global::System.Nullable<decimal> total, global::System.Nullable<decimal> takhfif, global::System.Nullable<decimal> payments) {
+        public virtual int InsertQuery(string code, string date_start, string date_end, string code_room, string code_customer, string madrak, global::System.Nullable<decimal> total, object payments) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((code == null)) {
                 throw new global::System.ArgumentNullException("code");
@@ -7122,17 +7120,11 @@ WHERE        (code = @code)";
             else {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((takhfif.HasValue == true)) {
-                command.Parameters[7].Value = ((decimal)(takhfif.Value));
+            if ((payments == null)) {
+                throw new global::System.ArgumentNullException("payments");
             }
             else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((payments.HasValue == true)) {
-                command.Parameters[8].Value = ((decimal)(payments.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
+                command.Parameters[7].Value = ((object)(payments));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7196,7 +7188,7 @@ WHERE        (code = @code)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string date_start, string date_end, string code_room, string code_customer, string madrak, global::System.Nullable<decimal> total, global::System.Nullable<decimal> takhfif, global::System.Nullable<decimal> payments, string code) {
+        public virtual int UpdateQuery(string date_start, string date_end, string code_room, string code_customer, string madrak, global::System.Nullable<decimal> total, global::System.Nullable<decimal> payments, string code) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             if ((date_start == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -7234,23 +7226,17 @@ WHERE        (code = @code)";
             else {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((takhfif.HasValue == true)) {
-                command.Parameters[6].Value = ((decimal)(takhfif.Value));
+            if ((payments.HasValue == true)) {
+                command.Parameters[6].Value = ((decimal)(payments.Value));
             }
             else {
                 command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((payments.HasValue == true)) {
-                command.Parameters[7].Value = ((decimal)(payments.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((code == null)) {
                 throw new global::System.ArgumentNullException("code");
             }
             else {
-                command.Parameters[8].Value = ((string)(code));
+                command.Parameters[7].Value = ((string)(code));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

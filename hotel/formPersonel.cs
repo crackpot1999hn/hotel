@@ -31,14 +31,16 @@ namespace hotel
 
         private void formPersonel_Load(object sender, EventArgs e)
         {
-            // This line of code loads data into the 'hotelDataSet1.tbl_personel' table.
+            // This line of code loads data into the 'hotelDataSet1.tbl_personel' table
             this.tbl_personelTableAdapter.Fill(this.hotelDataSet.tbl_personel);
             clearTextBox();
+            // radio btn 1
             rd1.Checked = true;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            // تعیین سطح دسترسی هر کاربر
             int pre = 0;
             if (rd1.Checked == true)
             {
@@ -53,12 +55,19 @@ namespace hotel
                 pre = 3;
             }
 
-            tbl_personelTableAdapter.InsertQuery(codeTextBox.Text, nameTextBox.Text, familyTextBox.Text, phoneTextBox.Text, addressTextBox.Text, mobileTextBox.Text, field_workTextBox.Text, user_nameTextBox.Text, passwordTextBox.Text, pre);
-            tbl_personelTableAdapter.Fill(hotelDataSet.tbl_personel);
-            MessageBox.Show("این کاربر ثبت شد");
-            clearTextBox();
-        }
+            try
+            {
+                tbl_personelTableAdapter.InsertQuery(codeTextBox.Text, nameTextBox.Text, familyTextBox.Text, phoneTextBox.Text, addressTextBox.Text, mobileTextBox.Text, field_workTextBox.Text, user_nameTextBox.Text, passwordTextBox.Text, pre);
+                tbl_personelTableAdapter.Fill(hotelDataSet.tbl_personel);
+                MessageBox.Show("این کاربر ثبت شد");
+                clearTextBox();
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
+        }
         private void editBtn_Click(object sender, EventArgs e)
         {
             int per = 0;
@@ -75,9 +84,16 @@ namespace hotel
                 per = 3;
             }
 
+            try
+            {
+                tbl_personelTableAdapter.UpdateQuery(nameTextBox.Text, familyTextBox.Text, phoneTextBox.Text, addressTextBox.Text, mobileTextBox.Text, field_workTextBox.Text, user_nameTextBox.Text, passwordTextBox.Text, per, codeTextBox.Text);
+                tbl_personelTableAdapter.Fill(hotelDataSet.tbl_personel);
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            tbl_personelTableAdapter.UpdateQuery(nameTextBox.Text, familyTextBox.Text, phoneTextBox.Text, addressTextBox.Text, mobileTextBox.Text, field_workTextBox.Text, user_nameTextBox.Text, passwordTextBox.Text, per, codeTextBox.Text);
-            tbl_personelTableAdapter.Fill(hotelDataSet.tbl_personel);
+            }
         }
 
         private void newBtn_Click(object sender, EventArgs e)
@@ -85,15 +101,23 @@ namespace hotel
             clearTextBox();
         }
 
+        //delete by key Delete keyboard         زمانی که کلید دلیت کیبورد زده شود
         private void tbl_personelDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            try
             {
-                tbl_personelTableAdapter.DeleteQuery(tbl_personelDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                this.tbl_personelTableAdapter.Fill(hotelDataSet.tbl_personel);
+                if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    tbl_personelTableAdapter.DeleteQuery(tbl_personelDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                    this.tbl_personelTableAdapter.Fill(this.hotelDataSet.tbl_personel);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
-        
     }
 }

@@ -15,6 +15,7 @@ namespace hotel
         public formUpdateRoom(string code)
         {
             InitializeComponent();
+            //  گرفتن کد و قرار دادن در تکس باکس 
             codeTextBox.Text = code;
         }
 
@@ -37,8 +38,16 @@ namespace hotel
             if (checkBox1.Checked == true)
                 flagroom = "1";
 
-            tbl_roomTableAdapter.UpdateQuery(int.Parse(number_flatTextBox.Text), int.Parse(areaTextBox.Text), decimal.Parse(priceTextBox.Text), emkanatTextBox.Text, descTextBox.Text, flagroom, codeTextBox.Text);
-            this.Close();
+            try
+            {
+                tbl_roomTableAdapter.UpdateQuery(int.Parse(number_flatTextBox.Text), int.Parse(areaTextBox.Text), decimal.Parse(priceTextBox.Text), emkanatTextBox.Text, descTextBox.Text, flagroom, codeTextBox.Text);
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
        

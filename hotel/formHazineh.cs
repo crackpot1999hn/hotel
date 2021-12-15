@@ -45,38 +45,50 @@ namespace hotel
 
         private void formHazineh_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'hotelDataSet.tbl_personel' table. You can move, or remove it, as needed.
+            // This line of code loads data into the 'hotelDataSet.tbl_personel' table
             this.tbl_personelTableAdapter.Fill(this.hotelDataSet.tbl_personel);
-            // TODO: This line of code loads data into the 'hotelDataSet.tbl_hazineh' table. You can move, or remove it, as needed.
+            //  This line of code loads data into the 'hotelDataSet.tbl_hazineh' table
             this.tbl_hazinehTableAdapter.Fill(this.hotelDataSet.tbl_hazineh);
+
+            // نمایش مجموع حساب
             lblTotal.Text = tbl_hazinehTableAdapter.getTotal().ToString();
+            // نمایش پرداختی
             lblPayments.Text = tbl_hazinehTableAdapter.getPayments().ToString();
 
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            /*
-             string flagRd;
 
-            if (rdKharid.Checked)
-                flagRd = "خرید";
+            try
+            {
+                tbl_hazinehTableAdapter.InsertQuery(codeTextBox.Text, code_factorTextBox.Text, codePersonelComboBox.Text, sharhTextBox.Text, azforoshandehTextBox.Text, decimal.Parse(priceTextBox.Text), "", decimal.Parse(paymentsTextBox.Text), descTextBox.Text);
+                tbl_hazinehTableAdapter.Fill(hotelDataSet.tbl_hazineh);
+                MessageBox.Show(" هزینه مورد نظر بروز شد");
+                clearTextBox();
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            if(rdKhedmat.Checked)
-                flagRd = "خدمت"; */
-
-             tbl_hazinehTableAdapter.InsertQuery(codeTextBox.Text, code_factorTextBox.Text, codePersonelComboBox.Text, sharhTextBox.Text, azforoshandehTextBox.Text, decimal.Parse(priceTextBox.Text), "", decimal.Parse(paymentsTextBox.Text), descTextBox.Text);
-             tbl_hazinehTableAdapter.Fill(hotelDataSet.tbl_hazineh);
-             MessageBox.Show(" هزینه مورد نظر بروز شد");
-             clearTextBox();
+            }
         }
 
+        //زمانی که کلیک راست شود رو ایتم 
         private void tbl_hazinehDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            if (MessageBox.Show("ایا از حذف مطمئن هستید؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            try
             {
-                tbl_hazinehTableAdapter.DeleteQuery(tbl_hazinehDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                tbl_hazinehTableAdapter.Fill(hotelDataSet.tbl_hazineh);
+                if (MessageBox.Show("ایا از حذف مطمئن هستید؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    tbl_hazinehTableAdapter.DeleteQuery(tbl_hazinehDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                    tbl_hazinehTableAdapter.Fill(hotelDataSet.tbl_hazineh);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 

@@ -17,6 +17,8 @@ namespace hotel
             InitializeComponent();
         }
 
+        
+
         private void tbl_roomBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -32,19 +34,34 @@ namespace hotel
             number_flatTextBox.Focus();
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
+        private void clearTextBox()
         {
-            //  flag = 1 اتاق خالی است
-            tbl_roomTableAdapter.InsertQuery(codeTextBox.Text, int.Parse(number_flatTextBox.Text), int.Parse(areaTextBox.Text), decimal.Parse(priceTextBox.Text), emkanatTextBox.Text, descTextBox.Text, "1");
-            this.tbl_roomTableAdapter.Fill(this.hotelDataSet.tbl_room);
-            MessageBox.Show("اطلاعات اتاق ثبت شد و میتوانید رزرو را انجام دهید");
-            codeTextBox.Text = tbl_roomTableAdapter.getMaxCode().ToString();
             emkanatTextBox.Clear();
             priceTextBox.Clear();
             areaTextBox.Clear();
             number_flatTextBox.Clear();
             descTextBox.Clear();
-            number_flatTextBox.Focus();
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //  flag = 1 اتاق خالی است
+                tbl_roomTableAdapter.InsertQuery(codeTextBox.Text, int.Parse(number_flatTextBox.Text), int.Parse(areaTextBox.Text), decimal.Parse(priceTextBox.Text), emkanatTextBox.Text, descTextBox.Text, "1");
+                this.tbl_roomTableAdapter.Fill(this.hotelDataSet.tbl_room);
+                MessageBox.Show("اطلاعات اتاق ثبت شد و میتوانید رزرو را انجام دهید");
+
+                /// اضافه شدن خودکار کد
+                codeTextBox.Text = tbl_roomTableAdapter.getMaxCode().ToString();
+                clearTextBox();
+                number_flatTextBox.Focus();
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void searchCodeTextBox_TextChanged(object sender, EventArgs e)
@@ -84,6 +101,7 @@ namespace hotel
 
         }
 
+        //زمانی که کلیک راست شود رو ایتم 
         private void حذفاطلاعاتToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -93,7 +111,7 @@ namespace hotel
             }
         }
 
-        //delete by key Delete keyboard
+        //delete by key Delete keyboard         زمانی که کلید دلیت کیبورد زده شود
         private void tbl_roomDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -103,16 +121,30 @@ namespace hotel
             }
         }
 
+        //زمانی که کلیک راست شود رو ایتم 
         private void ویرایشاطلاعاتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new formUpdateRoom(tbl_roomDataGridView.SelectedRows[0].Cells[0].Value.ToString()).ShowDialog();
+            try
+            {
+                new formUpdateRoom(tbl_roomDataGridView.SelectedRows[0].Cells[0].Value.ToString()).ShowDialog();
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+            }
         }
 
-        private void اتاقخالینیستToolStripMenuItem_Click(object sender, EventArgs e)
+        //زمانی که کلیک راست شود رو ایتم 
+        private void خالیکردنToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // خالی کردن اتاق 
+            // flag = 1 اتاق خالی است    
             tbl_roomTableAdapter.UpdateFlag("1", tbl_roomDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+
         }
+
+       
 
       
     }

@@ -11,7 +11,6 @@ E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formCustomer.resources
 E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formUpdateCustomer.resources
 E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formRoom.resources
 E:\Software\C#\hotel\hotel\hotel\obj\Debug\hotel.formUpdateRoom.resources
-E:\Software\C#\hotel\hotel\hotel\bin\Debug\FarsiLibrary.Win.dll
 E:\Software\C#\hotel\hotel\hotel\bin\Debug\FarsiLibrary.Utils.dll
 E:\Software\C#\hotel\hotel\hotel\bin\Debug\FarsiLibrary.Resources.dll
 E:\Software\C#\hotel\hotel\hotel\bin\Debug\FarsiLibrary.Win.xml

@@ -43,8 +43,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formHazineh));
             this.panel1 = new System.Windows.Forms.Panel();
             this.saveBtn = new System.Windows.Forms.Button();
-            this.rdKhedmat = new System.Windows.Forms.RadioButton();
-            this.rdKharid = new System.Windows.Forms.RadioButton();
             this.descTextBox = new System.Windows.Forms.TextBox();
             this.tbl_hazinehBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hotelDataSet = new hotel.hotelDataSet();
@@ -226,8 +224,6 @@
             this.panel1.BackColor = System.Drawing.Color.MediumPurple;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.saveBtn);
-            this.panel1.Controls.Add(this.rdKhedmat);
-            this.panel1.Controls.Add(this.rdKharid);
             this.panel1.Controls.Add(this.descTextBox);
             this.panel1.Controls.Add(descLabel);
             this.panel1.Controls.Add(paymentsLabel);
@@ -260,28 +256,6 @@
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // rdKhedmat
-            // 
-            this.rdKhedmat.AutoSize = true;
-            this.rdKhedmat.Location = new System.Drawing.Point(49, 65);
-            this.rdKhedmat.Name = "rdKhedmat";
-            this.rdKhedmat.Size = new System.Drawing.Size(57, 23);
-            this.rdKhedmat.TabIndex = 15;
-            this.rdKhedmat.TabStop = true;
-            this.rdKhedmat.Text = "خدمت";
-            this.rdKhedmat.UseVisualStyleBackColor = true;
-            // 
-            // rdKharid
-            // 
-            this.rdKharid.AutoSize = true;
-            this.rdKharid.Location = new System.Drawing.Point(33, 24);
-            this.rdKharid.Name = "rdKharid";
-            this.rdKharid.Size = new System.Drawing.Size(73, 23);
-            this.rdKharid.TabIndex = 14;
-            this.rdKharid.TabStop = true;
-            this.rdKharid.Text = "خرید کالا";
-            this.rdKharid.UseVisualStyleBackColor = true;
-            // 
             // descTextBox
             // 
             this.descTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_hazinehBindingSource, "desc", true));
@@ -311,6 +285,8 @@
             // codePersonelComboBox
             // 
             this.codePersonelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblpersonelBindingSource, "code", true));
+            this.codePersonelComboBox.DataSource = this.tblpersonelBindingSource;
+            this.codePersonelComboBox.DisplayMember = "code";
             this.codePersonelComboBox.FormattingEnabled = true;
             this.codePersonelComboBox.Location = new System.Drawing.Point(701, 113);
             this.codePersonelComboBox.Name = "codePersonelComboBox";
@@ -510,7 +486,7 @@
             // lblPayments
             // 
             this.lblPayments.AutoSize = true;
-            this.lblPayments.Location = new System.Drawing.Point(77, 329);
+            this.lblPayments.Location = new System.Drawing.Point(84, 329);
             this.lblPayments.Name = "lblPayments";
             this.lblPayments.Size = new System.Drawing.Size(0, 19);
             this.lblPayments.TabIndex = 15;
@@ -529,7 +505,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(242, 328);
+            this.lblTotal.Location = new System.Drawing.Point(257, 328);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(0, 22);
             this.lblTotal.TabIndex = 13;
@@ -733,8 +709,6 @@
         private System.Windows.Forms.TextBox priceTextBox;
         private System.Windows.Forms.TextBox descTextBox;
         private System.Windows.Forms.Button saveBtn;
-        private System.Windows.Forms.RadioButton rdKhedmat;
-        private System.Windows.Forms.RadioButton rdKharid;
         private System.Windows.Forms.TextBox paymentsTextBox;
         private System.Windows.Forms.ComboBox codePersonelComboBox;
         private System.Windows.Forms.Panel panel2;

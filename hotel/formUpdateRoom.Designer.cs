@@ -36,7 +36,6 @@
             System.Windows.Forms.Label descLabel;
             System.Windows.Forms.Label number_flatLabel1;
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.number_flatTextBox = new System.Windows.Forms.TextBox();
@@ -48,6 +47,7 @@
             this.areaTextBox = new System.Windows.Forms.TextBox();
             this.codeTextBox = new System.Windows.Forms.TextBox();
             this.tbl_roomTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_roomTableAdapter();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             codeLabel = new System.Windows.Forms.Label();
             areaLabel = new System.Windows.Forms.Label();
             priceLabel = new System.Windows.Forms.Label();
@@ -143,17 +143,6 @@
             this.panel1.Size = new System.Drawing.Size(571, 282);
             this.panel1.TabIndex = 1;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(458, 205);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.checkBox1.Size = new System.Drawing.Size(108, 21);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "اتاق خالی است";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(503, 250);
@@ -228,6 +217,7 @@
             // codeTextBox
             // 
             this.codeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblroomBindingSource, "code", true));
+            this.codeTextBox.Enabled = false;
             this.codeTextBox.Location = new System.Drawing.Point(349, 19);
             this.codeTextBox.Name = "codeTextBox";
             this.codeTextBox.Size = new System.Drawing.Size(114, 23);
@@ -236,6 +226,17 @@
             // tbl_roomTableAdapter
             // 
             this.tbl_roomTableAdapter.ClearBeforeFill = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(458, 205);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.checkBox1.Size = new System.Drawing.Size(108, 21);
+            this.checkBox1.TabIndex = 17;
+            this.checkBox1.Text = "اتاق خالی است";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // formUpdateRoom
             // 
@@ -272,9 +273,9 @@
         private System.Windows.Forms.TextBox areaTextBox;
         private System.Windows.Forms.TextBox codeTextBox;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private hotelDataSet hotelDataSet;
         private System.Windows.Forms.BindingSource tblroomBindingSource;
         private hotelDataSetTableAdapters.tbl_roomTableAdapter tbl_roomTableAdapter;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
