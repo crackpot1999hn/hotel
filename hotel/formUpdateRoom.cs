@@ -38,17 +38,16 @@ namespace hotel
             if (checkBox1.Checked == true)
                 flagroom = "1";
 
-            try
-            {
+           if(number_flatTextBox.Text !="" && areaTextBox.Text !="" && priceTextBox.Text !="" &&  emkanatTextBox.Text !="" && descTextBox.Text !="" && codeTextBox.Text !=""){
                 tbl_roomTableAdapter.UpdateQuery(int.Parse(number_flatTextBox.Text), int.Parse(areaTextBox.Text), decimal.Parse(priceTextBox.Text), emkanatTextBox.Text, descTextBox.Text, flagroom, codeTextBox.Text);
                 this.Close();
-            }
-            catch
-            {
+            
+           }else{
                 MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+           }
+
             }
-        }
 
        
     }

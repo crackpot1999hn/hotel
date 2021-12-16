@@ -74,6 +74,7 @@ namespace hotel
             }
         }
 
+
         //زمانی که کلیک راست شود رو ایتم 
         private void tbl_hazinehDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
@@ -119,14 +120,21 @@ namespace hotel
 
         private void personelSearchComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (personelSearchComboBox.Text=="")
+            if (personelSearchTextBox.Text=="")
             {
                 tbl_hazinehTableAdapter.Fill(hotelDataSet.tbl_hazineh);
             }
             else
             {
-                tbl_hazinehTableAdapter.FillByCodePersonel(hotelDataSet.tbl_hazineh, personelSearchComboBox.Text);
+                tbl_hazinehTableAdapter.FillByCodePersonel(hotelDataSet.tbl_hazineh, personelSearchTextBox.Text);
             }
+        }
+
+        //refrash form
+        private void formHazineh_Activated(object sender, EventArgs e)
+        {
+            lblTotal.Text = tbl_hazinehTableAdapter.getTotal().ToString();
+            lblPayments.Text = tbl_hazinehTableAdapter.getPayments().ToString();
         }
      
     }

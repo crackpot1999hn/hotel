@@ -17,11 +17,11 @@ namespace hotel
 {
     public partial class Form1 : Form
     {
-        public Form1()//string us,string per
+        public Form1(string us, string per)
         {
             InitializeComponent();
-            //lblPer.Text = per;
-            //lblUsLogin.Text = us;
+            lblPer.Text = per;
+            lblUsLogin.Text = us;
         }
 
         private void اطلاعاتمشتریانToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,16 +51,19 @@ namespace hotel
             this.Validate();
             this.tbl_roomBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.hotelDataSet);
-
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // This line of code loads data into the 'hotelDataSet.tbl_personel' table
+            this.tbl_personelTableAdapter.Fill(this.hotelDataSet.tbl_personel);
             // This line of code loads data into the 'hotelDataSet.tbl_reserve' table
             this.tbl_reserveTableAdapter.Fill(this.hotelDataSet.tbl_reserve);
             // This line of code loads data into the 'hotelDataSet.tbl_room' table
             this.tbl_roomTableAdapter.Fill(this.hotelDataSet.tbl_room);
 
+            // سطح دسترسی برای منو 
             if (lblPer.Text == "2")
             {
                 اطلاعاتکارکنانToolStripMenuItem.Visible = false;
@@ -95,11 +98,11 @@ namespace hotel
 
         }
 
-   
-
-      
-
-    
+        // refrash form
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            tbl_reserveTableAdapter.Fill(hotelDataSet.tbl_reserve);
+        }
       
     }
 }

@@ -71,6 +71,8 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.tableAdapterManager = new hotel.hotelDataSetTableAdapters.TableAdapterManager();
             this.tbl_personelBindingSource1BindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
@@ -99,6 +101,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_personelDataGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_personelBindingSourceBindingNavigator)).BeginInit();
             this.tbl_personelBindingSourceBindingNavigator.SuspendLayout();
@@ -344,10 +347,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumPurple;
+            this.panel3.ContextMenuStrip = this.contextMenuStrip1;
             this.panel3.Controls.Add(this.tbl_personelDataGridView);
             this.panel3.Location = new System.Drawing.Point(12, 332);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(891, 311);
+            this.panel3.Size = new System.Drawing.Size(891, 372);
             this.panel3.TabIndex = 10;
             // 
             // tbl_personelDataGridView
@@ -365,13 +369,14 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
+            this.tbl_personelDataGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.tbl_personelDataGridView.DataSource = this.tbl_personelBindingSource;
-            this.tbl_personelDataGridView.Location = new System.Drawing.Point(10, 42);
+            this.tbl_personelDataGridView.Location = new System.Drawing.Point(14, 42);
             this.tbl_personelDataGridView.Name = "tbl_personelDataGridView";
             this.tbl_personelDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tbl_personelDataGridView.Size = new System.Drawing.Size(871, 265);
+            this.tbl_personelDataGridView.Size = new System.Drawing.Size(867, 314);
             this.tbl_personelDataGridView.TabIndex = 4;
-            this.tbl_personelDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.tbl_personelDataGridView_UserDeletingRow);
+            this.tbl_personelDataGridView.AllowUserToDeleteRowsChanged += new System.EventHandler(this.tbl_personelDataGridView_AllowUserToDeleteRowsChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -438,10 +443,25 @@
             // 
             // dataGridViewTextBoxColumn10
             // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "permission";
-            this.dataGridViewTextBoxColumn10.HeaderText = "permission";
+            this.dataGridViewTextBoxColumn10.HeaderText = "سطح دسترسی";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.حذفToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(96, 26);
+            // 
+            // حذفToolStripMenuItem
+            // 
+            this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
+            this.حذفToolStripMenuItem.Text = "حذف";
+            this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
             // 
             // toolStripButton4
             // 
@@ -625,7 +645,7 @@
             // 
             // formPersonel
             // 
-            this.ClientSize = new System.Drawing.Size(915, 645);
+            this.ClientSize = new System.Drawing.Size(915, 742);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tbl_personelBindingSourceBindingNavigator);
@@ -635,11 +655,13 @@
             this.Name = "formPersonel";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "فرم ثبت پرسنل";
+            this.Activated += new System.EventHandler(this.formPersonel_Activated);
             this.Load += new System.EventHandler(this.formPersonel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbl_personelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbl_personelDataGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_personelBindingSourceBindingNavigator)).EndInit();
@@ -673,16 +695,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView tbl_personelDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private hotelDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ToolStripButton tbl_personelBindingSource1BindingNavigatorSaveItem;
@@ -697,6 +709,18 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.BindingNavigator tbl_personelBindingSourceBindingNavigator;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem حذفToolStripMenuItem;
 
   
 

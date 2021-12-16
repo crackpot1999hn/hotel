@@ -47,7 +47,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.calBtn = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.applyBtn = new System.Windows.Forms.Button();
             this.baghiMandehTextBox = new System.Windows.Forms.TextBox();
             this.paymentTextBox = new System.Windows.Forms.TextBox();
@@ -226,7 +225,6 @@
             this.panel2.Controls.Add(this.lblTotal);
             this.panel2.Controls.Add(label4);
             this.panel2.Controls.Add(this.calBtn);
-            this.panel2.Controls.Add(this.checkBox1);
             this.panel2.Controls.Add(this.applyBtn);
             this.panel2.Controls.Add(this.baghiMandehTextBox);
             this.panel2.Controls.Add(paymentsLabel);
@@ -282,16 +280,6 @@
             this.calBtn.Text = "محاسبه";
             this.calBtn.UseVisualStyleBackColor = true;
             this.calBtn.Click += new System.EventHandler(this.calBtn_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(210, 114);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(83, 23);
-            this.checkBox1.TabIndex = 27;
-            this.checkBox1.Text = "اقامت دارد";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // applyBtn
             // 
@@ -815,6 +803,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn takhfifDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

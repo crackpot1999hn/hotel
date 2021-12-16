@@ -59,6 +59,7 @@
             this.tableAdapterManager = new hotel.hotelDataSetTableAdapters.TableAdapterManager();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPer = new System.Windows.Forms.Label();
+            this.tblpersonelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.lblUsLogin = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -75,12 +76,14 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbl_reserveBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_reserveTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_reserveTableAdapter();
+            this.tbl_personelTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_personelTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_roomBindingNavigator)).BeginInit();
             this.tbl_roomBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_roomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblpersonelBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_reserveDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_reserveBindingSource)).BeginInit();
@@ -193,7 +196,7 @@
             this.tbl_roomBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.tbl_roomBindingNavigator.Name = "tbl_roomBindingNavigator";
             this.tbl_roomBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.tbl_roomBindingNavigator.Size = new System.Drawing.Size(941, 25);
+            this.tbl_roomBindingNavigator.Size = new System.Drawing.Size(930, 25);
             this.tbl_roomBindingNavigator.TabIndex = 3;
             this.tbl_roomBindingNavigator.Text = "bindingNavigator1";
             this.tbl_roomBindingNavigator.Visible = false;
@@ -338,6 +341,11 @@
             this.lblPer.Size = new System.Drawing.Size(0, 18);
             this.lblPer.TabIndex = 11;
             // 
+            // tblpersonelBindingSource
+            // 
+            this.tblpersonelBindingSource.DataMember = "tbl_personel";
+            this.tblpersonelBindingSource.DataSource = this.hotelDataSet;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -469,6 +477,10 @@
             // 
             this.tbl_reserveTableAdapter.ClearBeforeFill = true;
             // 
+            // tbl_personelTableAdapter
+            // 
+            this.tbl_personelTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -486,6 +498,7 @@
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "مدیریت هتل";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -496,6 +509,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblpersonelBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tbl_reserveDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_reserveBindingSource)).EndInit();
@@ -551,6 +565,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.BindingSource tblpersonelBindingSource;
+        private hotelDataSetTableAdapters.tbl_personelTableAdapter tbl_personelTableAdapter;
     }
 }
 

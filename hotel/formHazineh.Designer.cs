@@ -72,7 +72,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.personelSearchComboBox = new System.Windows.Forms.ComboBox();
             this.azForoSearchTextBox = new System.Windows.Forms.TextBox();
             this.FacSearchTextBox = new System.Windows.Forms.TextBox();
             this.tbl_hazinehDataGridView = new System.Windows.Forms.DataGridView();
@@ -88,6 +87,7 @@
             this.tbl_hazinehTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_hazinehTableAdapter();
             this.tableAdapterManager = new hotel.hotelDataSetTableAdapters.TableAdapterManager();
             this.tbl_personelTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_personelTableAdapter();
+            this.personelSearchTextBox = new System.Windows.Forms.TextBox();
             codeLabel = new System.Windows.Forms.Label();
             code_factorLabel = new System.Windows.Forms.Label();
             code_personelLabel = new System.Windows.Forms.Label();
@@ -143,7 +143,7 @@
             // 
             textLabel.AutoSize = true;
             textLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textLabel.Location = new System.Drawing.Point(582, 28);
+            textLabel.Location = new System.Drawing.Point(586, 28);
             textLabel.Name = "textLabel";
             textLabel.Size = new System.Drawing.Size(53, 22);
             textLabel.TabIndex = 6;
@@ -153,17 +153,17 @@
             // 
             foroshandehLabel.AutoSize = true;
             foroshandehLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            foroshandehLabel.Location = new System.Drawing.Point(591, 72);
+            foroshandehLabel.Location = new System.Drawing.Point(566, 72);
             foroshandehLabel.Name = "foroshandehLabel";
-            foroshandehLabel.Size = new System.Drawing.Size(34, 22);
+            foroshandehLabel.Size = new System.Drawing.Size(93, 22);
             foroshandehLabel.TabIndex = 8;
-            foroshandehLabel.Text = "از :";
+            foroshandehLabel.Text = "از فروشنده :";
             // 
             // priceLabel
             // 
             priceLabel.AutoSize = true;
             priceLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            priceLabel.Location = new System.Drawing.Point(584, 116);
+            priceLabel.Location = new System.Drawing.Point(588, 116);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new System.Drawing.Size(49, 22);
             priceLabel.TabIndex = 2;
@@ -173,7 +173,7 @@
             // 
             descLabel.AutoSize = true;
             descLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descLabel.Location = new System.Drawing.Point(308, 114);
+            descLabel.Location = new System.Drawing.Point(283, 114);
             descLabel.Name = "descLabel";
             descLabel.Size = new System.Drawing.Size(82, 22);
             descLabel.TabIndex = 6;
@@ -183,7 +183,7 @@
             // 
             paymentsLabel.AutoSize = true;
             paymentsLabel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            paymentsLabel.Location = new System.Drawing.Point(288, 71);
+            paymentsLabel.Location = new System.Drawing.Point(263, 71);
             paymentsLabel.Name = "paymentsLabel";
             paymentsLabel.Size = new System.Drawing.Size(72, 22);
             paymentsLabel.TabIndex = 12;
@@ -259,7 +259,7 @@
             // descTextBox
             // 
             this.descTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_hazinehBindingSource, "desc", true));
-            this.descTextBox.Location = new System.Drawing.Point(142, 108);
+            this.descTextBox.Location = new System.Drawing.Point(117, 108);
             this.descTextBox.Name = "descTextBox";
             this.descTextBox.Size = new System.Drawing.Size(140, 26);
             this.descTextBox.TabIndex = 7;
@@ -277,14 +277,13 @@
             // paymentsTextBox
             // 
             this.paymentsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_hazinehBindingSource, "payments", true));
-            this.paymentsTextBox.Location = new System.Drawing.Point(142, 66);
+            this.paymentsTextBox.Location = new System.Drawing.Point(117, 66);
             this.paymentsTextBox.Name = "paymentsTextBox";
             this.paymentsTextBox.Size = new System.Drawing.Size(140, 26);
             this.paymentsTextBox.TabIndex = 13;
             // 
             // codePersonelComboBox
             // 
-            this.codePersonelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblpersonelBindingSource, "code", true));
             this.codePersonelComboBox.DataSource = this.tblpersonelBindingSource;
             this.codePersonelComboBox.DisplayMember = "code";
             this.codePersonelComboBox.FormattingEnabled = true;
@@ -301,7 +300,7 @@
             // azforoshandehTextBox
             // 
             this.azforoshandehTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_hazinehBindingSource, "foroshandeh", true));
-            this.azforoshandehTextBox.Location = new System.Drawing.Point(431, 65);
+            this.azforoshandehTextBox.Location = new System.Drawing.Point(406, 65);
             this.azforoshandehTextBox.Name = "azforoshandehTextBox";
             this.azforoshandehTextBox.Size = new System.Drawing.Size(140, 26);
             this.azforoshandehTextBox.TabIndex = 9;
@@ -309,7 +308,7 @@
             // sharhTextBox
             // 
             this.sharhTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_hazinehBindingSource, "text", true));
-            this.sharhTextBox.Location = new System.Drawing.Point(142, 25);
+            this.sharhTextBox.Location = new System.Drawing.Point(117, 25);
             this.sharhTextBox.Name = "sharhTextBox";
             this.sharhTextBox.Size = new System.Drawing.Size(429, 26);
             this.sharhTextBox.TabIndex = 7;
@@ -317,7 +316,7 @@
             // priceTextBox
             // 
             this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tbl_hazinehBindingSource, "price", true));
-            this.priceTextBox.Location = new System.Drawing.Point(431, 114);
+            this.priceTextBox.Location = new System.Drawing.Point(406, 114);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(140, 26);
             this.priceTextBox.TabIndex = 3;
@@ -467,11 +466,11 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumPurple;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.personelSearchTextBox);
             this.panel2.Controls.Add(this.lblPayments);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.lblTotal);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.personelSearchComboBox);
             this.panel2.Controls.Add(label3);
             this.panel2.Controls.Add(label2);
             this.panel2.Controls.Add(this.azForoSearchTextBox);
@@ -519,18 +518,6 @@
             this.label4.Size = new System.Drawing.Size(70, 22);
             this.label4.TabIndex = 12;
             this.label4.Text = "جمع کل :";
-            // 
-            // personelSearchComboBox
-            // 
-            this.personelSearchComboBox.DataSource = this.tblpersonelBindingSource;
-            this.personelSearchComboBox.DisplayMember = "code";
-            this.personelSearchComboBox.FormattingEnabled = true;
-            this.personelSearchComboBox.Location = new System.Drawing.Point(237, 20);
-            this.personelSearchComboBox.Name = "personelSearchComboBox";
-            this.personelSearchComboBox.Size = new System.Drawing.Size(106, 27);
-            this.personelSearchComboBox.TabIndex = 11;
-            this.personelSearchComboBox.ValueMember = "code";
-            this.personelSearchComboBox.SelectedValueChanged += new System.EventHandler(this.personelSearchComboBox_SelectedValueChanged);
             // 
             // azForoSearchTextBox
             // 
@@ -650,6 +637,13 @@
             // 
             this.tbl_personelTableAdapter.ClearBeforeFill = true;
             // 
+            // personelSearchTextBox
+            // 
+            this.personelSearchTextBox.Location = new System.Drawing.Point(239, 20);
+            this.personelSearchTextBox.Name = "personelSearchTextBox";
+            this.personelSearchTextBox.Size = new System.Drawing.Size(106, 26);
+            this.personelSearchTextBox.TabIndex = 16;
+            // 
             // formHazineh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -665,6 +659,7 @@
             this.Name = "formHazineh";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "فرم ثبت هزینه ها";
+            this.Activated += new System.EventHandler(this.formHazineh_Activated);
             this.Load += new System.EventHandler(this.formHazineh_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -712,7 +707,6 @@
         private System.Windows.Forms.TextBox paymentsTextBox;
         private System.Windows.Forms.ComboBox codePersonelComboBox;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox personelSearchComboBox;
         private System.Windows.Forms.TextBox azForoSearchTextBox;
         private System.Windows.Forms.TextBox FacSearchTextBox;
         private System.Windows.Forms.DataGridView tbl_hazinehDataGridView;
@@ -731,5 +725,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.BindingSource tblpersonelBindingSource;
         private hotelDataSetTableAdapters.tbl_personelTableAdapter tbl_personelTableAdapter;
+        private System.Windows.Forms.TextBox personelSearchTextBox;
     }
 }

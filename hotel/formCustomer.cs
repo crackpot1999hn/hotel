@@ -31,6 +31,7 @@ namespace hotel
             nameTextBox.Clear();
             familyTextBox.Clear();
             phoneTextBox.Clear();
+            codeTextBox.Clear();
             mobileTextBox.Clear();
         }
 
@@ -43,22 +44,22 @@ namespace hotel
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            try
+            if (codeTextBox.Text != "" && nameTextBox.Text != "" && familyTextBox.Text != "" && code_meliTextBox.Text != "" && phoneTextBox.Text != "" && mobileTextBox.Text != "")
             {
                 tbl_customerTableAdapter.InsertQuery(codeTextBox.Text, nameTextBox.Text, familyTextBox.Text, code_meliTextBox.Text, phoneTextBox.Text, mobileTextBox.Text);
                 this.tbl_customerTableAdapter.Fill(this.hotelDataSet.tbl_customer);
                 MessageBox.Show("اطلاعات این مشتری با موفقیت ثبت شد", "ثبت انجام شد", MessageBoxButtons.OK, MessageBoxIcon.Information);
-               
+
                 /// اضافه شدن خودکار کد
                 codeTextBox.Text = tbl_customerTableAdapter.getMaxCode().ToString();
                 clearTextBox();
                 code_meliTextBox.Focus();
             }
-            catch
+            else
             {
                 MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
+            
         }
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)

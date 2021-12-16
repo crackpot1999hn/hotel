@@ -27,6 +27,7 @@ namespace hotel
             phoneTextBox.Clear();
             user_nameTextBox.Clear();
             addressTextBox.Clear();
+            codeTextBox.Clear();
         }
 
         private void formPersonel_Load(object sender, EventArgs e)
@@ -36,6 +37,8 @@ namespace hotel
             clearTextBox();
             // radio btn 1
             rd1.Checked = true;
+            tbl_personelDataGridView.AllowUserToDeleteRows = false;
+
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -55,14 +58,13 @@ namespace hotel
                 pre = 3;
             }
 
-            try
-            {
+            if(codeTextBox.Text !="" && nameTextBox.Text !="" && familyTextBox.Text !="" && phoneTextBox.Text !="" && addressTextBox.Text !="" && mobileTextBox.Text !="" && field_workTextBox.Text !="" && user_nameTextBox.Text !="" && passwordTextBox.Text !=""){
                 tbl_personelTableAdapter.InsertQuery(codeTextBox.Text, nameTextBox.Text, familyTextBox.Text, phoneTextBox.Text, addressTextBox.Text, mobileTextBox.Text, field_workTextBox.Text, user_nameTextBox.Text, passwordTextBox.Text, pre);
                 tbl_personelTableAdapter.Fill(hotelDataSet.tbl_personel);
                 MessageBox.Show("این کاربر ثبت شد");
                 clearTextBox();
             }
-            catch
+            else
             {
                 MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -101,15 +103,16 @@ namespace hotel
             clearTextBox();
         }
 
-        //delete by key Delete keyboard         زمانی که کلید دلیت کیبورد زده شود
-        private void tbl_personelDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+
+        //زمانی که کلیک راست شود رو ایتم 
+        private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     tbl_personelTableAdapter.DeleteQuery(tbl_personelDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                    this.tbl_personelTableAdapter.Fill(this.hotelDataSet.tbl_personel);
+                    tbl_personelTableAdapter.Fill(hotelDataSet.tbl_personel);
                 }
             }
             catch
@@ -118,6 +121,37 @@ namespace hotel
 
             }
         }
+
+        //delete by key Delete keyboard         زمانی که کلید دلیت کیبورد زده شود
+        private void tbl_personelDataGridView_UserDeletingRow_1(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    tbl_personelTableAdapter.DeleteQuery(tbl_personelDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+                    tbl_personelTableAdapter.Fill(hotelDataSet.tbl_personel);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        // reload form
+        private void formPersonel_Activated(object sender, EventArgs e)
+        {
+            this.tbl_personelTableAdapter.Fill(this.hotelDataSet.tbl_personel);
+
+        }
+
+        private void tbl_personelDataGridView_AllowUserToDeleteRowsChanged(object sender, EventArgs e)
+        {
+        }
+
+        
 
     }
 }

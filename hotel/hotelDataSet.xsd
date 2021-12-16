@@ -140,7 +140,7 @@ SELECT code, name, family, code_meli, phone, mobile FROM tbl_customer WHERE (cod
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="hotelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="hotelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       tbl_customer
@@ -457,7 +457,7 @@ WHERE        (code = @code)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="hotelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="hotelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[tbl_personel] ([code], [name], [family], [phone], [address], [mobile], [field_work], [user_name], [password], [permission]) VALUES (@code, @name, @family, @phone, @address, @mobile, @field_work, @user_name, @password, @permission);
@@ -488,7 +488,7 @@ SELECT code, name, family, phone, address, mobile, field_work, user_name, passwo
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="hotelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="hotelConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       tbl_personel
@@ -920,7 +920,7 @@ WHERE        (code = @code)</CommandText>
   <xs:element name="hotelDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="hotelDataSet" msprop:Generator_UserDSName="hotelDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbl_customer" msprop:Generator_TableClassName="tbl_customerDataTable" msprop:Generator_TableVarName="tabletbl_customer" msprop:Generator_RowChangedName="tbl_customerRowChanged" msprop:Generator_TablePropName="tbl_customer" msprop:Generator_RowDeletingName="tbl_customerRowDeleting" msprop:Generator_RowChangingName="tbl_customerRowChanging" msprop:Generator_RowEvHandlerName="tbl_customerRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_customerRowDeleted" msprop:Generator_RowClassName="tbl_customerRow" msprop:Generator_UserTableName="tbl_customer" msprop:Generator_RowEvArgName="tbl_customerRowChangeEvent">
+        <xs:element name="tbl_customer" msprop:Generator_TableClassName="tbl_customerDataTable" msprop:Generator_TableVarName="tabletbl_customer" msprop:Generator_TablePropName="tbl_customer" msprop:Generator_RowDeletingName="tbl_customerRowDeleting" msprop:Generator_RowChangingName="tbl_customerRowChanging" msprop:Generator_RowEvHandlerName="tbl_customerRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_customerRowDeleted" msprop:Generator_UserTableName="tbl_customer" msprop:Generator_RowChangedName="tbl_customerRowChanged" msprop:Generator_RowEvArgName="tbl_customerRowChangeEvent" msprop:Generator_RowClassName="tbl_customerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code">
@@ -968,7 +968,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbl_hazineh" msprop:Generator_TableClassName="tbl_hazinehDataTable" msprop:Generator_TableVarName="tabletbl_hazineh" msprop:Generator_RowChangedName="tbl_hazinehRowChanged" msprop:Generator_TablePropName="tbl_hazineh" msprop:Generator_RowDeletingName="tbl_hazinehRowDeleting" msprop:Generator_RowChangingName="tbl_hazinehRowChanging" msprop:Generator_RowEvHandlerName="tbl_hazinehRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_hazinehRowDeleted" msprop:Generator_RowClassName="tbl_hazinehRow" msprop:Generator_UserTableName="tbl_hazineh" msprop:Generator_RowEvArgName="tbl_hazinehRowChangeEvent">
+        <xs:element name="tbl_hazineh" msprop:Generator_TableClassName="tbl_hazinehDataTable" msprop:Generator_TableVarName="tabletbl_hazineh" msprop:Generator_TablePropName="tbl_hazineh" msprop:Generator_RowDeletingName="tbl_hazinehRowDeleting" msprop:Generator_RowChangingName="tbl_hazinehRowChanging" msprop:Generator_RowEvHandlerName="tbl_hazinehRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_hazinehRowDeleted" msprop:Generator_UserTableName="tbl_hazineh" msprop:Generator_RowChangedName="tbl_hazinehRowChanged" msprop:Generator_RowEvArgName="tbl_hazinehRowChangeEvent" msprop:Generator_RowClassName="tbl_hazinehRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code">
@@ -1025,7 +1025,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbl_personel" msprop:Generator_TableClassName="tbl_personelDataTable" msprop:Generator_TableVarName="tabletbl_personel" msprop:Generator_RowChangedName="tbl_personelRowChanged" msprop:Generator_TablePropName="tbl_personel" msprop:Generator_RowDeletingName="tbl_personelRowDeleting" msprop:Generator_RowChangingName="tbl_personelRowChanging" msprop:Generator_RowEvHandlerName="tbl_personelRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_personelRowDeleted" msprop:Generator_RowClassName="tbl_personelRow" msprop:Generator_UserTableName="tbl_personel" msprop:Generator_RowEvArgName="tbl_personelRowChangeEvent">
+        <xs:element name="tbl_personel" msprop:Generator_TableClassName="tbl_personelDataTable" msprop:Generator_TableVarName="tabletbl_personel" msprop:Generator_TablePropName="tbl_personel" msprop:Generator_RowDeletingName="tbl_personelRowDeleting" msprop:Generator_RowChangingName="tbl_personelRowChanging" msprop:Generator_RowEvHandlerName="tbl_personelRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_personelRowDeleted" msprop:Generator_UserTableName="tbl_personel" msprop:Generator_RowChangedName="tbl_personelRowChanged" msprop:Generator_RowEvArgName="tbl_personelRowChangeEvent" msprop:Generator_RowClassName="tbl_personelRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code">
@@ -1095,7 +1095,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbl_reserve" msprop:Generator_TableClassName="tbl_reserveDataTable" msprop:Generator_TableVarName="tabletbl_reserve" msprop:Generator_RowChangedName="tbl_reserveRowChanged" msprop:Generator_TablePropName="tbl_reserve" msprop:Generator_RowDeletingName="tbl_reserveRowDeleting" msprop:Generator_RowChangingName="tbl_reserveRowChanging" msprop:Generator_RowEvHandlerName="tbl_reserveRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_reserveRowDeleted" msprop:Generator_RowClassName="tbl_reserveRow" msprop:Generator_UserTableName="tbl_reserve" msprop:Generator_RowEvArgName="tbl_reserveRowChangeEvent">
+        <xs:element name="tbl_reserve" msprop:Generator_TableClassName="tbl_reserveDataTable" msprop:Generator_TableVarName="tabletbl_reserve" msprop:Generator_TablePropName="tbl_reserve" msprop:Generator_RowDeletingName="tbl_reserveRowDeleting" msprop:Generator_RowChangingName="tbl_reserveRowChanging" msprop:Generator_RowEvHandlerName="tbl_reserveRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_reserveRowDeleted" msprop:Generator_UserTableName="tbl_reserve" msprop:Generator_RowChangedName="tbl_reserveRowChanged" msprop:Generator_RowEvArgName="tbl_reserveRowChangeEvent" msprop:Generator_RowClassName="tbl_reserveRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code">
@@ -1146,7 +1146,7 @@ WHERE        (code = @code)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbl_room" msprop:Generator_TableClassName="tbl_roomDataTable" msprop:Generator_TableVarName="tabletbl_room" msprop:Generator_RowChangedName="tbl_roomRowChanged" msprop:Generator_TablePropName="tbl_room" msprop:Generator_RowDeletingName="tbl_roomRowDeleting" msprop:Generator_RowChangingName="tbl_roomRowChanging" msprop:Generator_RowEvHandlerName="tbl_roomRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_roomRowDeleted" msprop:Generator_RowClassName="tbl_roomRow" msprop:Generator_UserTableName="tbl_room" msprop:Generator_RowEvArgName="tbl_roomRowChangeEvent">
+        <xs:element name="tbl_room" msprop:Generator_TableClassName="tbl_roomDataTable" msprop:Generator_TableVarName="tabletbl_room" msprop:Generator_TablePropName="tbl_room" msprop:Generator_RowDeletingName="tbl_roomRowDeleting" msprop:Generator_RowChangingName="tbl_roomRowChanging" msprop:Generator_RowEvHandlerName="tbl_roomRowChangeEventHandler" msprop:Generator_RowDeletedName="tbl_roomRowDeleted" msprop:Generator_UserTableName="tbl_room" msprop:Generator_RowChangedName="tbl_roomRowChanged" msprop:Generator_RowEvArgName="tbl_roomRowChangeEvent" msprop:Generator_RowClassName="tbl_roomRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code">

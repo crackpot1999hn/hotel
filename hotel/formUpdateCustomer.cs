@@ -27,13 +27,24 @@ namespace hotel
         }
         private void formUpdateCustomer_Load(object sender, EventArgs e)
         {
+            
             this.tbl_customerTableAdapter.FillByCode(this.hotelDataSet.tbl_customer,textCode.Text);
         }
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            tbl_customerTableAdapter.UpdateQuery(textName.Text, textFamily.Text, textCodemeli.Text, textPhone.Text, textMobile.Text, textCode.Text);
-            this.Close();
+
+         if ( textName.Text != "" && textFamily.Text != "" && textCodemeli.Text != "" && textPhone.Text != "" && textMobile.Text != "" && textCode.Text !="")
+         {
+                tbl_customerTableAdapter.UpdateQuery(textName.Text, textFamily.Text, textCodemeli.Text, textPhone.Text, textMobile.Text, textCode.Text);
+                this.Close();
+
+            }else{
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+         }
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,6 +52,7 @@ namespace hotel
             this.Close();
         }
 
+       
        
 
      
