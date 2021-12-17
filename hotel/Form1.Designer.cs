@@ -59,10 +59,10 @@
             this.tableAdapterManager = new hotel.hotelDataSetTableAdapters.TableAdapterManager();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPer = new System.Windows.Forms.Label();
-            this.tblpersonelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.lblUsLogin = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tblpersonelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbl_reserveDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -341,11 +341,6 @@
             this.lblPer.Size = new System.Drawing.Size(0, 18);
             this.lblPer.TabIndex = 11;
             // 
-            // tblpersonelBindingSource
-            // 
-            this.tblpersonelBindingSource.DataMember = "tbl_personel";
-            this.tblpersonelBindingSource.DataSource = this.hotelDataSet;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -374,6 +369,11 @@
             this.label1.Size = new System.Drawing.Size(90, 18);
             this.label1.TabIndex = 12;
             this.label1.Text = "کاربر وارد شده :";
+            // 
+            // tblpersonelBindingSource
+            // 
+            this.tblpersonelBindingSource.DataMember = "tbl_personel";
+            this.tblpersonelBindingSource.DataSource = this.hotelDataSet;
             // 
             // panel2
             // 
@@ -493,12 +493,14 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tbl_roomBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "مدیریت هتل";
             this.Activated += new System.EventHandler(this.Form1_Activated);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -37,7 +37,11 @@ namespace hotel
             }
             else
             {
-                MessageBox.Show("نام کاربری یا رمز ورود اشتباه است", "اخطار", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // reload  form
+                  formLogin frm = new formLogin();
+                  frm.Show();
+                  this.Hide();
+                MessageBox.Show("نام کاربری یا رمز ورود اشتباه است", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

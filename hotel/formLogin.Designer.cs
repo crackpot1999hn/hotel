@@ -42,8 +42,10 @@
             this.lblPermission = new System.Windows.Forms.Label();
             this.usernameCombo = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tblpersonelBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tblpersonelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblpersonelBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -145,12 +147,13 @@
             // 
             // usernameCombo
             // 
+            this.usernameCombo.DataSource = this.tblpersonelBindingSource1;
+            this.usernameCombo.DisplayMember = "user_name";
             this.usernameCombo.FormattingEnabled = true;
             this.usernameCombo.Location = new System.Drawing.Point(138, 82);
             this.usernameCombo.Name = "usernameCombo";
             this.usernameCombo.Size = new System.Drawing.Size(148, 26);
             this.usernameCombo.TabIndex = 10;
-            this.usernameCombo.ValueMember = "user_name";
             // 
             // checkBox1
             // 
@@ -164,6 +167,11 @@
             this.checkBox1.Text = "نمایش رمز";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // tblpersonelBindingSource1
+            // 
+            this.tblpersonelBindingSource1.DataMember = "tbl_personel";
+            this.tblpersonelBindingSource1.DataSource = this.hotelDataSet;
             // 
             // formLogin
             // 
@@ -190,6 +198,7 @@
             this.Load += new System.EventHandler(this.formLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tblpersonelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblpersonelBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +219,6 @@
         private System.Windows.Forms.Label lblPermission;
         private System.Windows.Forms.ComboBox usernameCombo;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.BindingSource tblpersonelBindingSource1;
     }
 }

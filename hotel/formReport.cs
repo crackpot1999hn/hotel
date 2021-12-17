@@ -19,7 +19,7 @@ namespace hotel
 
         private void formReport_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'hotelDataSet.tbl_room' table. You can move, or remove it, as needed.
+            // This line of code loads data into the 'hotelDataSet.tbl_room' table
             this.tbl_roomTableAdapter.FillByFlag(this.hotelDataSet.tbl_room);
 
             this.reportViewer1.RefreshReport();
