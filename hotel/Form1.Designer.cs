@@ -500,7 +500,6 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "مدیریت هتل";
             this.Activated += new System.EventHandler(this.Form1_Activated);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -31,21 +31,8 @@ namespace hotel
 
         private void ثبتاتاقToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form.GetType() == typeof(formRoom))
-                {
-                    form.Activate();
-                    panel1.Visible = false;
-                    return;
-                }
-            }               
-            formRoom formRoom = new formRoom();
-            formRoom.Dock = DockStyle.Fill;
-            new Form1(lblUsLogin.Text, lblPer.Text).Hide();
-            formRoom.Show();
-            formRoom.MdiParent = this;
-          
+           
+            new formRoom().Show();          
         }
 
         private void رزرواتاقToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,17 +42,8 @@ namespace hotel
 
         private void اطلاعاتکارکنانToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            panel1.Visible = false;
-             formPersonel f = new formPersonel();
-            f.MdiParent = this;
-            f.Dock = DockStyle.Fill;
-            f.Show();
-            
-
-        
-
-           
+             new formPersonel().Show();
+     
         }
 
       
@@ -128,11 +106,6 @@ namespace hotel
             tbl_reserveTableAdapter.Fill(hotelDataSet.tbl_reserve);
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Form1 parentForm = (Form1)this.MdiParent;
-            parentForm.panel1.Visible = true;
-        }
-      
+
     }
 }

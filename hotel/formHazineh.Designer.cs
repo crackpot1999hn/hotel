@@ -68,6 +68,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tbl_hazinehBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.personelSearchTextBox = new System.Windows.Forms.TextBox();
             this.lblPayments = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -75,6 +76,9 @@
             this.azForoSearchTextBox = new System.Windows.Forms.TextBox();
             this.FacSearchTextBox = new System.Windows.Forms.TextBox();
             this.tbl_hazinehDataGridView = new System.Windows.Forms.DataGridView();
+            this.tbl_hazinehTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_hazinehTableAdapter();
+            this.tableAdapterManager = new hotel.hotelDataSetTableAdapters.TableAdapterManager();
+            this.tbl_personelTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_personelTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,10 +88,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbl_hazinehTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_hazinehTableAdapter();
-            this.tableAdapterManager = new hotel.hotelDataSetTableAdapters.TableAdapterManager();
-            this.tbl_personelTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_personelTableAdapter();
-            this.personelSearchTextBox = new System.Windows.Forms.TextBox();
             codeLabel = new System.Windows.Forms.Label();
             code_factorLabel = new System.Windows.Forms.Label();
             code_personelLabel = new System.Windows.Forms.Label();
@@ -482,6 +482,14 @@
             this.panel2.Size = new System.Drawing.Size(955, 366);
             this.panel2.TabIndex = 6;
             // 
+            // personelSearchTextBox
+            // 
+            this.personelSearchTextBox.Location = new System.Drawing.Point(239, 20);
+            this.personelSearchTextBox.Name = "personelSearchTextBox";
+            this.personelSearchTextBox.Size = new System.Drawing.Size(106, 26);
+            this.personelSearchTextBox.TabIndex = 16;
+            this.personelSearchTextBox.TextChanged += new System.EventHandler(this.personelSearchTextBox_TextChanged);
+            // 
             // lblPayments
             // 
             this.lblPayments.AutoSize = true;
@@ -556,6 +564,24 @@
             this.tbl_hazinehDataGridView.TabIndex = 0;
             this.tbl_hazinehDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.tbl_hazinehDataGridView_UserDeletingRow);
             // 
+            // tbl_hazinehTableAdapter
+            // 
+            this.tbl_hazinehTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.tbl_customerTableAdapter = null;
+            this.tableAdapterManager.tbl_hazinehTableAdapter = this.tbl_hazinehTableAdapter;
+            this.tableAdapterManager.tbl_personelTableAdapter = null;
+            this.tableAdapterManager.tbl_reserveTableAdapter = null;
+            this.tableAdapterManager.tbl_roomTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = hotel.hotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // tbl_personelTableAdapter
+            // 
+            this.tbl_personelTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -604,6 +630,7 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "flag";
             this.dataGridViewTextBoxColumn7.HeaderText = "نوع";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Visible = false;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -618,31 +645,6 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "desc";
             this.dataGridViewTextBoxColumn9.HeaderText = "توضیحات";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // tbl_hazinehTableAdapter
-            // 
-            this.tbl_hazinehTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.tbl_customerTableAdapter = null;
-            this.tableAdapterManager.tbl_hazinehTableAdapter = this.tbl_hazinehTableAdapter;
-            this.tableAdapterManager.tbl_personelTableAdapter = null;
-            this.tableAdapterManager.tbl_reserveTableAdapter = null;
-            this.tableAdapterManager.tbl_roomTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = hotel.hotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // tbl_personelTableAdapter
-            // 
-            this.tbl_personelTableAdapter.ClearBeforeFill = true;
-            // 
-            // personelSearchTextBox
-            // 
-            this.personelSearchTextBox.Location = new System.Drawing.Point(239, 20);
-            this.personelSearchTextBox.Name = "personelSearchTextBox";
-            this.personelSearchTextBox.Size = new System.Drawing.Size(106, 26);
-            this.personelSearchTextBox.TabIndex = 16;
             // 
             // formHazineh
             // 
@@ -714,6 +716,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.BindingSource tblpersonelBindingSource;
+        private hotelDataSetTableAdapters.tbl_personelTableAdapter tbl_personelTableAdapter;
+        private System.Windows.Forms.TextBox personelSearchTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -723,8 +728,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.BindingSource tblpersonelBindingSource;
-        private hotelDataSetTableAdapters.tbl_personelTableAdapter tbl_personelTableAdapter;
-        private System.Windows.Forms.TextBox personelSearchTextBox;
     }
 }
