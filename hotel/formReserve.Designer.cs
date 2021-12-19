@@ -94,11 +94,6 @@
             this.madrakTextBox = new System.Windows.Forms.TextBox();
             this.faDatePicker1 = new FarsiLibrary.Win.Controls.FADatePicker();
             this.codeTextBox = new System.Windows.Forms.TextBox();
-            this.tblcustomerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tblroomBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tblcustomerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.tblroomBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.tblroomBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             label3 = new System.Windows.Forms.Label();
             madrakLabel = new System.Windows.Forms.Label();
             codeLabel = new System.Windows.Forms.Label();
@@ -119,22 +114,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblcustomerBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblcustomerBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            label3.Location = new System.Drawing.Point(99, 31);
+            label3.Location = new System.Drawing.Point(71, 32);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(54, 22);
+            label3.Size = new System.Drawing.Size(84, 22);
             label3.TabIndex = 47;
-            label3.Text = "کرایه :";
+            label3.Text = "کرایه اتاق :";
             // 
             // madrakLabel
             // 
@@ -625,14 +615,14 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblroomBindingSource, "price", true));
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblPrice.Location = new System.Drawing.Point(31, 35);
+            this.lblPrice.Location = new System.Drawing.Point(20, 35);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(0, 19);
             this.lblPrice.TabIndex = 48;
             // 
             // RoomComboBox
             // 
-            this.RoomComboBox.DataSource = this.tblroomBindingSource3;
+            this.RoomComboBox.DataSource = this.tblroomBindingSource;
             this.RoomComboBox.DisplayMember = "code";
             this.RoomComboBox.FormattingEnabled = true;
             this.RoomComboBox.Location = new System.Drawing.Point(428, 82);
@@ -642,7 +632,7 @@
             // 
             // CustomerComboBox
             // 
-            this.CustomerComboBox.DataSource = this.tblcustomerBindingSource2;
+            this.CustomerComboBox.DataSource = this.tblcustomerBindingSource;
             this.CustomerComboBox.DisplayMember = "code";
             this.CustomerComboBox.FormattingEnabled = true;
             this.CustomerComboBox.Location = new System.Drawing.Point(707, 75);
@@ -715,31 +705,6 @@
             this.codeTextBox.Size = new System.Drawing.Size(142, 26);
             this.codeTextBox.TabIndex = 36;
             // 
-            // tblcustomerBindingSource1
-            // 
-            this.tblcustomerBindingSource1.DataMember = "tbl_customer";
-            this.tblcustomerBindingSource1.DataSource = this.hotelDataSet;
-            // 
-            // tblroomBindingSource1
-            // 
-            this.tblroomBindingSource1.DataMember = "tbl_room";
-            this.tblroomBindingSource1.DataSource = this.hotelDataSet;
-            // 
-            // tblcustomerBindingSource2
-            // 
-            this.tblcustomerBindingSource2.DataMember = "tbl_customer";
-            this.tblcustomerBindingSource2.DataSource = this.hotelDataSet;
-            // 
-            // tblroomBindingSource2
-            // 
-            this.tblroomBindingSource2.DataMember = "tbl_room";
-            this.tblroomBindingSource2.DataSource = this.hotelDataSet;
-            // 
-            // tblroomBindingSource3
-            // 
-            this.tblroomBindingSource3.DataMember = "tbl_room";
-            this.tblroomBindingSource3.DataSource = this.hotelDataSet;
-            // 
             // formReserve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -775,11 +740,6 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblcustomerBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblcustomerBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblroomBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -843,10 +803,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn takhfifDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paymentsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tblroomBindingSource1;
-        private System.Windows.Forms.BindingSource tblcustomerBindingSource1;
-        private System.Windows.Forms.BindingSource tblroomBindingSource3;
-        private System.Windows.Forms.BindingSource tblcustomerBindingSource2;
-        private System.Windows.Forms.BindingSource tblroomBindingSource2;
     }
 }

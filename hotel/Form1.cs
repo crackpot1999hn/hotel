@@ -91,7 +91,8 @@ namespace hotel
     
         private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            new formLogin().Show();
         }
 
         private void هزینهToolStripMenuItem_Click(object sender, EventArgs e)
