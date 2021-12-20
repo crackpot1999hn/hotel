@@ -159,15 +159,15 @@
             // اتاقهایخالیToolStripMenuItem
             // 
             this.اتاقهایخالیToolStripMenuItem.Name = "اتاقهایخالیToolStripMenuItem";
-            this.اتاقهایخالیToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.اتاقهایخالیToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.اتاقهایخالیToolStripMenuItem.Text = "اتاق های خالی";
             this.اتاقهایخالیToolStripMenuItem.Click += new System.EventHandler(this.اتاقهایخالیToolStripMenuItem_Click);
             // 
             // خروجToolStripMenuItem
             // 
             this.خروجToolStripMenuItem.Name = "خروجToolStripMenuItem";
-            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.خروجToolStripMenuItem.Text = "خروج";
+            this.خروجToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.خروجToolStripMenuItem.Text = "خروج از حساب";
             this.خروجToolStripMenuItem.Click += new System.EventHandler(this.خروجToolStripMenuItem_Click);
             // 
             // tbl_roomBindingNavigator
@@ -493,9 +493,12 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tbl_roomBindingNavigator);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "مدیریت هتل";

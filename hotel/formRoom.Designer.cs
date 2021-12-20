@@ -59,14 +59,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tbl_roomBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.tbl_roomDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ویرایشاطلاعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.حذفاطلاعاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,6 +72,14 @@
             this.searchCodeTextBox = new System.Windows.Forms.TextBox();
             this.tbl_roomTableAdapter = new hotel.hotelDataSetTableAdapters.tbl_roomTableAdapter();
             this.tableAdapterManager = new hotel.hotelDataSetTableAdapters.TableAdapterManager();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberflatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.areaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emkanatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flagDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             codeLabel = new System.Windows.Forms.Label();
             areaLabel = new System.Windows.Forms.Label();
             priceLabel = new System.Windows.Forms.Label();
@@ -91,9 +91,9 @@
             this.tbl_roomBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_roomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_roomDataGridView)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // codeLabel
@@ -367,76 +367,6 @@
             this.tbl_roomBindingNavigatorSaveItem.Text = "Save Data";
             this.tbl_roomBindingNavigatorSaveItem.Click += new System.EventHandler(this.tbl_roomBindingNavigatorSaveItem_Click);
             // 
-            // tbl_roomDataGridView
-            // 
-            this.tbl_roomDataGridView.AutoGenerateColumns = false;
-            this.tbl_roomDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tbl_roomDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.tbl_roomDataGridView.ContextMenuStrip = this.contextMenuStrip1;
-            this.tbl_roomDataGridView.DataSource = this.tbl_roomBindingSource;
-            this.tbl_roomDataGridView.Location = new System.Drawing.Point(27, 80);
-            this.tbl_roomDataGridView.Name = "tbl_roomDataGridView";
-            this.tbl_roomDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tbl_roomDataGridView.Size = new System.Drawing.Size(810, 220);
-            this.tbl_roomDataGridView.TabIndex = 0;
-            this.tbl_roomDataGridView.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.tbl_roomDataGridView_UserDeletingRow);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "code";
-            this.dataGridViewTextBoxColumn1.HeaderText = "کد";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "number_flat";
-            this.dataGridViewTextBoxColumn2.HeaderText = "تعداد تخت";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "area";
-            this.dataGridViewTextBoxColumn3.HeaderText = "مساحت";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "price";
-            this.dataGridViewTextBoxColumn4.HeaderText = "قیمت";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "emkanat";
-            this.dataGridViewTextBoxColumn5.HeaderText = "امکانات";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "desc";
-            this.dataGridViewTextBoxColumn6.HeaderText = "توضیحات";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "flag";
-            this.dataGridViewTextBoxColumn7.HeaderText = "وضعیت";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -445,39 +375,40 @@
             this.خالیکردنToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 70);
             // 
             // ویرایشاطلاعاتToolStripMenuItem
             // 
             this.ویرایشاطلاعاتToolStripMenuItem.Name = "ویرایشاطلاعاتToolStripMenuItem";
-            this.ویرایشاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ویرایشاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.ویرایشاطلاعاتToolStripMenuItem.Text = "ویرایش اطلاعات";
             this.ویرایشاطلاعاتToolStripMenuItem.Click += new System.EventHandler(this.ویرایشاطلاعاتToolStripMenuItem_Click);
             // 
             // حذفاطلاعاتToolStripMenuItem
             // 
             this.حذفاطلاعاتToolStripMenuItem.Name = "حذفاطلاعاتToolStripMenuItem";
-            this.حذفاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.حذفاطلاعاتToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.حذفاطلاعاتToolStripMenuItem.Text = "حذف اطلاعات";
             this.حذفاطلاعاتToolStripMenuItem.Click += new System.EventHandler(this.حذفاطلاعاتToolStripMenuItem_Click);
             // 
             // خالیکردنToolStripMenuItem
             // 
             this.خالیکردنToolStripMenuItem.Name = "خالیکردنToolStripMenuItem";
-            this.خالیکردنToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.خالیکردنToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.خالیکردنToolStripMenuItem.Text = "خالی کردن اتاق";
             this.خالیکردنToolStripMenuItem.Click += new System.EventHandler(this.خالیکردنToolStripMenuItem_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumPurple;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.searchFlatTextBox);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.searchPriceTextBox);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.searchCodeTextBox);
-            this.panel2.Controls.Add(this.tbl_roomDataGridView);
             this.panel2.Location = new System.Drawing.Point(12, 226);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(861, 311);
@@ -551,6 +482,76 @@
             this.tableAdapterManager.tbl_roomTableAdapter = this.tbl_roomTableAdapter;
             this.tableAdapterManager.UpdateOrder = hotel.hotelDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.code,
+            this.numberflatDataGridViewTextBoxColumn,
+            this.areaDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.emkanatDataGridViewTextBoxColumn,
+            this.descDataGridViewTextBoxColumn,
+            this.flagDataGridViewTextBoxColumn});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.DataSource = this.tbl_roomBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(32, 83);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(805, 215);
+            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
+            // 
+            // code
+            // 
+            this.code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "کد";
+            this.code.Name = "code";
+            // 
+            // numberflatDataGridViewTextBoxColumn
+            // 
+            this.numberflatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.numberflatDataGridViewTextBoxColumn.DataPropertyName = "number_flat";
+            this.numberflatDataGridViewTextBoxColumn.HeaderText = "تعداد تخت";
+            this.numberflatDataGridViewTextBoxColumn.Name = "numberflatDataGridViewTextBoxColumn";
+            // 
+            // areaDataGridViewTextBoxColumn
+            // 
+            this.areaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.areaDataGridViewTextBoxColumn.DataPropertyName = "area";
+            this.areaDataGridViewTextBoxColumn.HeaderText = "مساحت";
+            this.areaDataGridViewTextBoxColumn.Name = "areaDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "قیمت";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // emkanatDataGridViewTextBoxColumn
+            // 
+            this.emkanatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.emkanatDataGridViewTextBoxColumn.DataPropertyName = "emkanat";
+            this.emkanatDataGridViewTextBoxColumn.HeaderText = "امکانات";
+            this.emkanatDataGridViewTextBoxColumn.Name = "emkanatDataGridViewTextBoxColumn";
+            // 
+            // descDataGridViewTextBoxColumn
+            // 
+            this.descDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descDataGridViewTextBoxColumn.DataPropertyName = "desc";
+            this.descDataGridViewTextBoxColumn.HeaderText = "توضیحات";
+            this.descDataGridViewTextBoxColumn.Name = "descDataGridViewTextBoxColumn";
+            // 
+            // flagDataGridViewTextBoxColumn
+            // 
+            this.flagDataGridViewTextBoxColumn.DataPropertyName = "flag";
+            this.flagDataGridViewTextBoxColumn.HeaderText = "flag";
+            this.flagDataGridViewTextBoxColumn.Name = "flagDataGridViewTextBoxColumn";
+            this.flagDataGridViewTextBoxColumn.Visible = false;
+            // 
             // formRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -575,10 +576,10 @@
             this.tbl_roomBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_roomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hotelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbl_roomDataGridView)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,7 +605,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton tbl_roomBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView tbl_roomDataGridView;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox descTextBox;
         private System.Windows.Forms.TextBox emkanatTextBox;
@@ -619,16 +619,17 @@
         private System.Windows.Forms.TextBox searchFlatTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox searchPriceTextBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ویرایشاطلاعاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem حذفاطلاعاتToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem خالیکردنToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberflatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn areaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emkanatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn flagDataGridViewTextBoxColumn;
     }
 }

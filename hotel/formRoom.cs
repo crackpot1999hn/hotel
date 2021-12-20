@@ -104,20 +104,36 @@ namespace hotel
         //زمانی که کلیک راست شود رو ایتم 
         private void حذفاطلاعاتToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            try
             {
-                tbl_roomTableAdapter.DeleteQuery(tbl_roomDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                this.tbl_roomTableAdapter.Fill(this.hotelDataSet.tbl_room);
+                if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    tbl_roomTableAdapter.DeleteQuery(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                    this.tbl_roomTableAdapter.Fill(this.hotelDataSet.tbl_room);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
         //delete by key Delete keyboard         زمانی که کلید دلیت کیبورد زده شود
-        private void tbl_roomDataGridView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-            if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            try
             {
-                tbl_roomTableAdapter.DeleteQuery(tbl_roomDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                this.tbl_roomTableAdapter.Fill(this.hotelDataSet.tbl_room);
+                if (MessageBox.Show("این ستون حذف شود؟", "اخطار", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    tbl_roomTableAdapter.DeleteQuery(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                    this.tbl_roomTableAdapter.Fill(this.hotelDataSet.tbl_room);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -126,7 +142,7 @@ namespace hotel
         {
             try
             {
-                new formUpdateRoom(tbl_roomDataGridView.SelectedRows[0].Cells[0].Value.ToString()).ShowDialog();
+                new formUpdateRoom(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()).ShowDialog();
             }
             catch
             {
@@ -140,9 +156,20 @@ namespace hotel
         {
             // خالی کردن اتاق 
             // flag = 1 اتاق خالی است    
-            tbl_roomTableAdapter.UpdateFlag("1", tbl_roomDataGridView.SelectedRows[0].Cells[0].Value.ToString());
+            try
+            {
+            tbl_roomTableAdapter.UpdateFlag("1", dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("مشکلی پیش آمده مجددا تلاش کنید", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+          
 
         }
+
+      
 
        
 

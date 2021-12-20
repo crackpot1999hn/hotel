@@ -81,7 +81,7 @@ namespace hotel
 
         private void اتاقهایخالیToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tbl_roomTableAdapter.FillByFlag(hotelDataSet.tbl_room);
+           // tbl_roomTableAdapter.FillByFlag(hotelDataSet.tbl_room);
           
             formReport fr = new formReport();
             fr.Owner = this;
