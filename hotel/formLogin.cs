@@ -32,8 +32,10 @@ namespace hotel
             if (hotelDataSet.tbl_personel.Rows.Count > 0)
             {
 
+
                 Form1 fr = new Form1(usernameCombo.Text, lblPermission.Text);
                 fr.Show();
+                this.Hide();
             }
             else
             {

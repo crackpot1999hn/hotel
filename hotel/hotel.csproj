@@ -166,7 +166,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="reportRoomFree.rdlc" />
     <None Include="hotelDataSet.xsc">
       <DependentUpon>hotelDataSet.xsd</DependentUpon>

@@ -186,14 +186,14 @@
             // CustomerComboBox
             // 
             this.CustomerComboBox.DataSource = this.tblcustomerBindingSource;
-            this.CustomerComboBox.DisplayMember = "name";
+            this.CustomerComboBox.DisplayMember = "code";
             this.CustomerComboBox.FormattingEnabled = true;
             this.CustomerComboBox.Location = new System.Drawing.Point(345, 67);
             this.CustomerComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CustomerComboBox.Name = "CustomerComboBox";
             this.CustomerComboBox.Size = new System.Drawing.Size(123, 23);
             this.CustomerComboBox.TabIndex = 45;
-            this.CustomerComboBox.ValueMember = "name";
+            this.CustomerComboBox.ValueMember = "code";
             // 
             // tblcustomerBindingSource
             // 
